@@ -11,6 +11,6 @@ public interface TrabajadorService {
 	public Trabajador registrar(Trabajador trabajador);
 	public Trabajador actualizar(Trabajador trabajador);
 	public Integer eliminar(int idtra);
-	public List<Trabajador>listaTrabajadores();	
+	public List<Trabajador>listar();	
 	Optional<Trabajador>obtenerPorId(int idtra);
 }

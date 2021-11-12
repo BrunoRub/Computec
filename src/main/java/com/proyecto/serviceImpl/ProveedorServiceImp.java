@@ -1,6 +1,7 @@
 package com.proyecto.serviceImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,10 +15,37 @@ public class ProveedorServiceImp implements ProveedorService{
 
 	@Autowired
 	ProveedorRepository repository;
-	
+
 	@Override
-	public List<Proveedor> listaProveedores() {
-		return repository.findAll();
+	public Proveedor registrar(Proveedor proveedor) {
+		return repository.save(proveedor);
 	}
+
+	@Override
+	public Proveedor actualizar(Proveedor proveedor) {
+		return repository.save(proveedor);
+	}
+
+	@Override
+	public Integer eliminar(int idprov) {
+		repository.deleteById(idprov);
+		Optional<Proveedor>pro = repository.findById(idprov);
+		if (pro.isEmpty()) {
+			return -1;
+		}
+		return 1;
+	}
+
+	@Override
+	public List<Proveedor> listar() {
+		return (List<Proveedor>) repository.findAll();
+	}
+
+	@Override
+	public Optional<Proveedor> obtenerPorId(int idprov) {
+		return repository.findById(idprov);
+	}
+	
+	
 
 }

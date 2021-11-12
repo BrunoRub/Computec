@@ -27,8 +27,8 @@ public class TrabajadorServiceImp implements TrabajadorService{
 	}
 
 	@Override
-	public List<Trabajador> listaTrabajadores() {
-		return repository.findAll();
+	public List<Trabajador> listar() {
+		return (List<Trabajador>) repository.findAll();
 	}
 
 	@Override

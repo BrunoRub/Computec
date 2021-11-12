@@ -20,7 +20,6 @@ import com.proyecto.service.TrabajadorService;
 @RequestMapping("trabajador")
 public class TrabajadorController {
 	
-	//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 	public Trabajador trabjador;
 	
 	@Autowired
@@ -34,7 +33,7 @@ public class TrabajadorController {
 	
 	@GetMapping()
 	public List<Trabajador>listar(){
-		return service.listaTrabajadores();
+		return service.listar();
 	}
 	
 	@GetMapping("{idtra}")
