@@ -1,6 +1,7 @@
 package com.proyecto.serviceImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,29 @@ public class VentaServiceImp implements VentaService{
 	@Override
 	public List<Venta> listaVentas() {		
 		return repository.findAll();
+	}
+
+	@Override
+	public Venta registraVenta(Venta v) {
+		
+		return repository.save(v);
+	}
+
+	@Override
+	public Integer eliminaVenta(int id) {
+		
+		 repository.deleteById(id);
+		 Optional<Venta> venta=repository.findById(id);
+		 if(venta.isEmpty()) {
+			 return -1;
+		 }
+		return 1;
+	}
+
+	@Override
+	public Venta actualizaVenta(Venta v) {
+		
+		return repository.save(v);
 	}
 
 }
