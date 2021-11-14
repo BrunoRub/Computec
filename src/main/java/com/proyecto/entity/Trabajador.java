@@ -19,8 +19,6 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "trabajador")
-@Getter
-@Setter
 public class Trabajador {
 	
 	@Id
@@ -60,6 +58,95 @@ public class Trabajador {
 	public String getDatos() {
 		return getNombre() + " "+getApellido();
 	}
+
+	public int getIdtra() {
+		return idtra;
+	}
+
+	public void setIdtra(int idtra) {
+		this.idtra = idtra;
+	}
+
+	public int getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(int nombre) {
+		this.nombre = nombre;
+	}
+
+	public int getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(int apellido) {
+		this.apellido = apellido;
+	}
+
+	public Date getFecnac() {
+		return fecnac;
+	}
+
+	public void setFecnac(Date fecnac) {
+		this.fecnac = fecnac;
+	}
+
+	public int getNumdoc() {
+		return numdoc;
+	}
+
+	public void setNumdoc(int numdoc) {
+		this.numdoc = numdoc;
+	}
+
+	public int getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(int direccion) {
+		this.direccion = direccion;
+	}
+
+	public int getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(int telefono) {
+		this.telefono = telefono;
+	}
+
+	public int getEmail() {
+		return email;
+	}
+
+	public void setEmail(int email) {
+		this.email = email;
+	}
+
+	public int getAcceso() {
+		return acceso;
+	}
+
+	public void setAcceso(int acceso) {
+		this.acceso = acceso;
+	}
+
+	public int getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(int usuario) {
+		this.usuario = usuario;
+	}
+
+	public int getClave() {
+		return clave;
+	}
+
+	public void setClave(int clave) {
+		this.clave = clave;
+	}
+	
 	
 	
 }

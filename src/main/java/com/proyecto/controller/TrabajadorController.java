@@ -20,15 +20,15 @@ import com.proyecto.service.TrabajadorService;
 @RequestMapping("trabajador")
 public class TrabajadorController {
 	
-	public Trabajador trabjador;
+	public Trabajador trabajador;
 	
 	@Autowired
 	private TrabajadorService service;
 	
 	@GetMapping("/iniciarSesion/{usuario}/{clave}")
 	public Trabajador obtenerTrabajador(@PathVariable("usuario")String usuario, @PathVariable("clave")String clave) {
-		this.trabjador = service.iniciarSesion(usuario, clave);
-		return this.trabjador;
+		this.trabajador = service.iniciarSesion(usuario, clave);
+		return this.trabajador;
 	}
 	
 	@GetMapping()
@@ -42,8 +42,8 @@ public class TrabajadorController {
 	}
 	
 	@PostMapping()
-	public Trabajador registrar(Trabajador trabjador){
-		return service.registrar(trabjador);
+	public Trabajador registrar(Trabajador trabajador){
+		return service.registrar(trabajador);
 	}
 	
 	@PutMapping("{idtra}")
@@ -60,12 +60,12 @@ public class TrabajadorController {
 	
 	@GetMapping("/usuarioSesion")
 	public Trabajador usuarioSesion() {
-		return this.trabjador;
+		return this.trabajador;
 	}
 	
 	@GetMapping("/cerrarSesion")
 	public int cerrarSesion() {
-		this.trabjador = null;		
+		this.trabajador = null;		
 		return 1;
 	}
 
