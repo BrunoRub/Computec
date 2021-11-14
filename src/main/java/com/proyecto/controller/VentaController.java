@@ -20,7 +20,7 @@ public class VentaController {
 	@Autowired
 	VentaService service;
 	
-	@GetMapping()
+	@GetMapping("/lista")
 	public List<Venta> listaVenta(){
 		return service.listaVentas();
 	}

@@ -14,9 +14,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import lombok.Getter;
-import lombok.Setter;
-
 @Entity
 @Table(name = "trabajador")
 public class Trabajador {

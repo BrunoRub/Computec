@@ -26,7 +26,7 @@ public class IngresoController {
 	@Autowired 
 	private IngresoService service;
 	
-	@GetMapping()
+	@GetMapping("/lista")
 	public List<Ingreso>listar(){
 		return service.listar();
 	}

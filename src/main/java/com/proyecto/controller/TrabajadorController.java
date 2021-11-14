@@ -17,7 +17,7 @@ import com.proyecto.entity.Trabajador;
 import com.proyecto.service.TrabajadorService;
 
 @RestController
-@RequestMapping("trabajador")
+@RequestMapping("/trabajador")
 public class TrabajadorController {
 	
 	public Trabajador trabajador;
@@ -31,7 +31,7 @@ public class TrabajadorController {
 		return this.trabajador;
 	}
 	
-	@GetMapping()
+	@GetMapping("/lista")
 	public List<Trabajador>listar(){
 		return service.listar();
 	}

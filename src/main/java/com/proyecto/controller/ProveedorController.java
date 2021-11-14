@@ -26,7 +26,7 @@ public class ProveedorController {
 	@Autowired
 	private ProveedorService service;
 	
-	@GetMapping
+	@GetMapping("/lista")
 	public List<Proveedor>listar(){
 		return service.listar();
 	}

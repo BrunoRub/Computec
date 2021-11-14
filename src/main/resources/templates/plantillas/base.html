@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <title th:text="${titulo}"></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body>
+    <header th:fragment="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="inicio">
+            <img th:src="@{/img/logo.png}" width="30" height="30" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/venta}">Ventas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/trabajador}">Trabajador</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/producto}">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/proveedor}">Proveedor</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/cliente}">Cliente</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/categoria}">Categoria</a>
+              </li>              
+            </ul>            
+          </div>
+        </nav>
+    </header>    
+</body>
+</html>

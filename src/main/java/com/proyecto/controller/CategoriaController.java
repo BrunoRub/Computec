@@ -11,13 +11,13 @@ import com.proyecto.entity.Categoria;
 import com.proyecto.service.CategoriaService;
 
 @RestController
-@RequestMapping
+@RequestMapping("/categoria")
 public class CategoriaController {
 
 	@Autowired
 	CategoriaService service;
 	
-	@GetMapping("/categoria")
+	@GetMapping("/lista")
 	public List<Categoria>lista(){
 		return service.listaCategorias();
 	}
