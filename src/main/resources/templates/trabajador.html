@@ -39,11 +39,9 @@
 									<th style="width: 5%">ID</th>
 									<th style="width: 10%">Nombre</th>
 									<th style="width: 10%">Apellido</th>
-									<th style="width: 10%">FechaNcimiento</th>
 									<th style="width: 10%">Documento</th>
 									<th style="width: 10%">Dirección</th>
 									<th style="width: 10%">Telefono</th>
-									<th style="width: 10%">Email</th>
 									<th style="width: 10%">Actualizar</th>
 									<th style="width: 10%">Eliminar</th>
 								</tr>
@@ -55,6 +53,56 @@
 				</div>
 			</div>
 		</div>
+	
+	<div class="card">
+			<div class="card-body">
+				<h4 class="card-title">Lista de empleados</h4>
+
+				<div class="table-responsive">
+					<table id="idTableEmpleado" class="table table-bordered">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Nombre</th>
+								<th>Apellido</th>
+								<th>Documento</th>
+								<th>Dirección</th>
+								<th>Telefono</th>
+							</tr>
+						</thead>
+						<tbody>
+							<th:block th:each="trabajador : ${lista}">
+								<tr>
+									<td th:text="${trabajador.idtra}"></td>
+									<td th:text="${trabajador.nombre}"></td>
+									<td th:text="${trabajador.apellido}"></td>
+									<td th:text="${trabajador.numdoc}"></td>
+									<td th:text="${trabajador.direccion}"></td>
+									<td th:text="${trabajador.telefono}"></td>
+									<td><a class="btn btn-primary"
+										th:href="@{/trabajador/edita/{idtra}(idtra=${trabajador.idtra})}"> <i
+											class="zmdi zmdi-edit zmdi-hc-fw"></i>
+
+									</a> <a class="btn btn-danger" href="#"
+										th:onclick="'elimina(' + ${trabajador.idtra} +')'"> <i
+											class="zmdi zmdi-delete zmdi-hc-fw"></i>
+
+									</a></td>
+								</tr>
+							</th:block>
+						</tbody>
+					</table>
+
+					<div class="table-responsive"></div>
+				</div>
+			</div>
+		</div>	
 	</div>
+	
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$("#idTableEmpleado").DataTable();
+	});
+	</script>
 </body>
 </html>

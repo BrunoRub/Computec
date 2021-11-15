@@ -1,59 +1,60 @@
 package com.proyecto.entity;
 
-import java.util.Date;
+import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "trabajador")
-public class Trabajador {
+public class Trabajador implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idtra;
 	
-	private int nombre;
+	@Column(name = "nombre", nullable = false, length = 45)
+	private String nombre;
 	
-	private int apellido;
+	@Column(name = "apellido", nullable = false, length = 45)
+	private String apellido;
 	
-	@JsonFormat(pattern = "yyyy-MM-dd")
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date fecnac;
+	@Column(name = "numdoc", nullable = false, length = 8)
+	private String numdoc;
 	
-	private int numdoc;
+	@Column(name = "direccion", nullable = false, length = 100)
+	private String direccion;
 	
-	private int direccion;
+	@Column(name = "telefono", nullable = false, length = 10)
+	private String telefono;
 	
-	private int telefono;
+	@Column(name = "username", nullable = false, length = 20)
+	private String username;
 	
-	private int email;
-	
-	private int acceso;
+	@Column(name = "clave", nullable = false, length = 20)
+	private String clave;
 
-	private int usuario;
-	
-	private int clave;
-
-	@Override
-	public String toString() {
-		return "Cliente [idtra=" + idtra + ", nombre=" + nombre + ", apellido=" + apellido + ", fecnac="
-				+ fecnac + ", numdoc=" + numdoc + ", direccion=" + direccion + ", telefono=" + telefono
-				+ ", email=" + email + ", acceso=" + acceso + ", usuario=" + usuario + ", clave=" + clave + "]";
+	public Trabajador(int idtra, String nombre, String apellido, String numdoc, String direccion, String telefono,
+			String username, String clave) {
+		super();
+		this.idtra = idtra;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.numdoc = numdoc;
+		this.direccion = direccion;
+		this.telefono = telefono;
+		this.username = username;
+		this.clave = clave;
 	}
-	
-	public String getDatos() {
-		return getNombre() + " "+getApellido();
+
+	public Trabajador() {
+		super();
 	}
 
 	public int getIdtra() {
@@ -64,86 +65,76 @@ public class Trabajador {
 		this.idtra = idtra;
 	}
 
-	public int getNombre() {
+	public String getNombre() {
 		return nombre;
 	}
 
-	public void setNombre(int nombre) {
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-	public int getApellido() {
+	public String getApellido() {
 		return apellido;
 	}
 
-	public void setApellido(int apellido) {
+	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
 
-	public Date getFecnac() {
-		return fecnac;
-	}
-
-	public void setFecnac(Date fecnac) {
-		this.fecnac = fecnac;
-	}
-
-	public int getNumdoc() {
+	public String getNumdoc() {
 		return numdoc;
 	}
 
-	public void setNumdoc(int numdoc) {
+	public void setNumdoc(String numdoc) {
 		this.numdoc = numdoc;
 	}
 
-	public int getDireccion() {
+	public String getDireccion() {
 		return direccion;
 	}
 
-	public void setDireccion(int direccion) {
+	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
 
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 
-	public int getEmail() {
-		return email;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setEmail(int email) {
-		this.email = email;
+	public void setUsername(String usuario) {
+		this.username = usuario;
 	}
 
-	public int getAcceso() {
-		return acceso;
-	}
-
-	public void setAcceso(int acceso) {
-		this.acceso = acceso;
-	}
-
-	public int getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(int usuario) {
-		this.usuario = usuario;
-	}
-
-	public int getClave() {
+	public String getClave() {
 		return clave;
 	}
 
-	public void setClave(int clave) {
+	public void setClave(String clave) {
 		this.clave = clave;
 	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	/*
+	@Override
+	public String toString() {
+		return "Cliente [idtra=" + idtra + ", nombre=" + nombre + ", apellido=" + apellido + ", numdoc=" + numdoc + 
+				", direccion=" + direccion + ", telefono=" + telefono +  ", usuario=" + usuario + ", clave=" + clave + "]";
+	}
 	
-	
+	public String getDatos() {
+		return getNombre() + " "+getApellido();
+	}*/
+
 	
 }

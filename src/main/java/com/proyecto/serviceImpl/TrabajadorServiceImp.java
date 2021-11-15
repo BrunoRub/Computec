@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.proyecto.entity.Trabajador;
@@ -16,13 +17,17 @@ public class TrabajadorServiceImp implements TrabajadorService{
 	@Autowired
 	TrabajadorRepository repository;
 	
+	/*@Autowired
+	private BCryptPasswordEncoder encoder;
+	
 	@Override
 	public Trabajador iniciarSesion(String usuario, String clave) {
 		return repository.iniciarSesion(usuario, clave);
 	}
-
+*/
 	@Override
 	public Trabajador registrar(Trabajador trabajador) {
+		//trabajador.setClave(encoder.encode(trabajador.getClave()));
 		return repository.save(trabajador);
 	}
 
@@ -50,5 +55,12 @@ public class TrabajadorServiceImp implements TrabajadorService{
 	public Optional<Trabajador> obtenerPorId(int idtra) {
 		return repository.findById(idtra);
 	}
+
+	@Override
+	public Trabajador findByUsername(String username) {
+		return repository.findByUsername(username);
+	}
+
+	
 
 }

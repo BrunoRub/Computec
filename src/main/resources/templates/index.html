@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+<meta charset="UTF-8" />
+<title th:text="${titulo}"></title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body>
+	<header th:replace="/plantillas/base::header"></header>
+	<div class="container mt-5">
+		<div class="row justify-center">
+			<div class="col-md=3">
+				<div class="card card-body">
+					<span th:if="$(sesion.trabajador!=null)">Bienvendo<span class="font-italic" th:text="$(sesion.trabajador.nombre)"></span></span>
+					<form th:action="@(/logout)" method = "POST">
+					<button type="submit" class="btn btn-primary mt-3">Salir</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

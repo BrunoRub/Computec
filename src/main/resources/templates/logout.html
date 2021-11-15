@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+<meta charset="UTF-8" />
+<title th:text="${titulo}"></title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body>
+	<div class="container mt-5">
+		<div class="row justify-conten-center">
+			<div class="col-md-5">
+				<div class="card card-body">
+				<h3 class="text-center">Gracias por su visita</h3>
+				<a th:href="@{/}" class="btn btn-primary mt-3">Inicio</a>
+				</div>				
+			</div>
+		</div>
+	</div>
+</body>
+</html>
