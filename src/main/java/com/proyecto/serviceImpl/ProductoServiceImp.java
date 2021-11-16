@@ -1,6 +1,7 @@
 package com.proyecto.serviceImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,11 +14,41 @@ import com.proyecto.service.ProductoService;
 public class ProductoServiceImp implements ProductoService{
 	
 	@Autowired
-	ProductoRepository repository;
+	private ProductoRepository productoRepository;
 
 	@Override
-	public List<Producto> listaProductos() {
-		return repository.findAll();
+	public Producto registrar(Producto producto) {
+		// TODO Auto-generated method stub
+		return productoRepository.save(producto);
+	}
+
+	@Override
+	public Producto actualizar(Producto producto) {
+		// TODO Auto-generated method stub
+		return productoRepository.save(producto);
+	}
+
+	@Override
+	public Integer eliminar(Long id) {
+		// TODO Auto-generated method stub
+		productoRepository.deleteById(id);
+		Optional<Producto> emp = productoRepository.findById(id);
+		if(emp.isPresent()) {
+			return -1;
+		}
+		return  1;
+	}
+
+	@Override
+	public Optional<Producto> obtenerPorId(Long id) {
+		// TODO Auto-generated method stub
+		return productoRepository.findById(id);
+	}
+	
+	@Override
+	public List<Producto> obtenerProducto() {
+		// TODO Auto-generated method stub
+		return (List<Producto>) productoRepository.findAll();
 	}
  
 }

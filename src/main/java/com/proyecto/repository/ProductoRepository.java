@@ -1,9 +1,11 @@
 package com.proyecto.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import com.proyecto.entity.Producto;
 
-public interface ProductoRepository extends JpaRepository<Producto, Integer>{
+@Repository
+public interface ProductoRepository extends CrudRepository<Producto, Long>{
 
 }

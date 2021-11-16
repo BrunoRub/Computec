@@ -6,6 +6,6 @@ import com.proyecto.entity.Categoria;
 
 public interface CategoriaService {
 	
-	public List<Categoria>listaCategorias();
+	List<Categoria> obtenerCategoria();
 
 }

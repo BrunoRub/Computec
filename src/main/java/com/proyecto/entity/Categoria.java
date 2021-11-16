@@ -1,45 +1,37 @@
 package com.proyecto.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "categoria")
+@Getter
+@Setter
 public class Categoria {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idcat;
-	
-	private String nombre;
-	
-	private String des;
+	private Long idcategoria;
 
-	public int getIdcat() {
-		return idcat;
-	}
+	@Column(name = "descripcion", length = 100, nullable = false)
+	private String descripcion;
 
-	public void setIdcat(int idcat) {
-		this.idcat = idcat;
-	}
+	@Column(columnDefinition = "TINTINT")
+	private int estado;
 
-	public String getNombre() {
-		return nombre;
-	}
+	@OneToMany(mappedBy = "categoria")
+	private List<Producto> producto = new ArrayList<Producto>();
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
 
-	public String getDes() {
-		return des;
-	}
-
-	public void setDes(String des) {
-		this.des = des;
-	}
-	
 }

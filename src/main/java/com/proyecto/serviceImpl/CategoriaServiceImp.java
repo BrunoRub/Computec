@@ -11,12 +11,13 @@ import com.proyecto.service.CategoriaService;
 
 @Service
 public class CategoriaServiceImp implements CategoriaService{
+	
 	@Autowired
-	CategoriaRepository repository;
+	private CategoriaRepository categoriaRepository;
 
 	@Override
-	public List<Categoria> listaCategorias() {
-		return repository.findAll();
+	public List<Categoria> obtenerCategoria() {
+		return (List<Categoria>) categoriaRepository.findAll();
 	}
 
 }
