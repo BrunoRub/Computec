@@ -9,7 +9,7 @@ public interface ProveedorService {
 
 	public Proveedor registrar(Proveedor proveedor);
 	public Proveedor actualizar(Proveedor proveedor);
-	public Integer eliminar(int  idprov);
+	public Integer eliminar(Long  idprov);
 	public List<Proveedor>listar();
-	Optional<Proveedor>obtenerPorId(int idprov);
+	Optional<Proveedor>obtenerPorId(Long idprov);
 }

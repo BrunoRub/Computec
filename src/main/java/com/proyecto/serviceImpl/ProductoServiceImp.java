@@ -29,10 +29,10 @@ public class ProductoServiceImp implements ProductoService{
 	}
 
 	@Override
-	public Integer eliminar(Long id) {
+	public Integer eliminar(Long idproducto) {
 		// TODO Auto-generated method stub
-		productoRepository.deleteById(id);
-		Optional<Producto> emp = productoRepository.findById(id);
+		productoRepository.deleteById(idproducto);
+		Optional<Producto> emp = productoRepository.findById(idproducto);
 		if(emp.isPresent()) {
 			return -1;
 		}
@@ -40,9 +40,9 @@ public class ProductoServiceImp implements ProductoService{
 	}
 
 	@Override
-	public Optional<Producto> obtenerPorId(Long id) {
+	public Optional<Producto> obtenerPorId(Long idproducto) {
 		// TODO Auto-generated method stub
-		return productoRepository.findById(id);
+		return productoRepository.findById(idproducto);
 	}
 	
 	@Override

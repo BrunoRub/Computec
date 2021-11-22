@@ -18,7 +18,7 @@ public class VentaServiceImp implements VentaService{
 
 	@Override
 	public List<Venta> listaVentas() {		
-		return repository.findAll();
+		return (List<Venta>) repository.findAll();
 	}
 
 	@Override
@@ -28,10 +28,10 @@ public class VentaServiceImp implements VentaService{
 	}
 
 	@Override
-	public Integer eliminaVenta(int id) {
+	public Integer eliminaVenta(Long idcategoria) {
 		
-		 repository.deleteById(id);
-		 Optional<Venta> venta=repository.findById(id);
+		 repository.deleteById(idcategoria);
+		 Optional<Venta> venta=repository.findById(idcategoria);
 		 if(venta.isEmpty()) {
 			 return -1;
 		 }

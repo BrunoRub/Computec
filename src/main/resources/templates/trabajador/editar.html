@@ -6,7 +6,7 @@
 
 <meta charset="ISO-8859-1">
 
-<title>Insert title here</title>
+<title>Editar Trabajador</title>
 <th:block th:insert="fragments/resources"></th:block>
 
 </head>
@@ -18,68 +18,76 @@
 
 			<div class="card-body">
 
-				<h4 class="card-title">Editar empleado</h4>
+				<h4 class="card-title">Editar Trabajador</h4>
 
-				<form th:action="@{/empleados/crear}" th:method="post"
-					th:object="${empleado}">
+				<form th:action="@{/trabajador/crear}" th:method="post"
+					th:object="${trabajador}">
 					
 					
-					<input type="hidden" th:field="*{id}"> 
+					<input type="hidden" th:field="*{idtra}"> 
 					<div class="form-row">
 
 						<div class="col-md-6">
-
 							<div class="form-group">
-
+							<label for="inputDescrip">NOMBRE:</label>	
 								<input type="text" th:field="*{nombre}" class="form-control"
-									placeholder="Nombres" maxlength="50"> <i
+									placeholder="Nombres" maxlength="45"> <i
 									class="form-group__bar"></i>
-
 							</div>
-
 						</div>
-
+						
 						<div class="col-md-6">
-
 							<div class="form-group">
-
-								<input type="text" th:field="*{salario}" class="form-control"
-									placeholder="Sueldo" maxlength="50"> <i
+							<label for="inputDescrip">APELLIDO:</label>	
+								<input type="text" th:field="*{apellido}" class="form-control"
+									placeholder="Apellidos" maxlength="45"> <i
 									class="form-group__bar"></i>
-
 							</div>
-
 						</div>
-
+						
 						<div class="col-md-6">
-
 							<div class="form-group">
-
-								<input type="text" th:field="*{fechaIngreso}"
-									class="validate[required] form-control date-picker hidden-sm-down"
-									placeholder="Fecha de Ingreso" maxlength="50"> <i
+							<label for="inputDescrip">DOCUMENTO:</label>	
+								<input type="text" th:field="*{numdoc}" class="form-control"
+									placeholder="Num. Documento" maxlength="8"> <i
 									class="form-group__bar"></i>
-
 							</div>
-
 						</div>
-
+						
 						<div class="col-md-6">
-
 							<div class="form-group">
-
-								<select th:field="*{departamento.id}" class="form-control">
-
-									<option value="-1">Seleccione</option>
-
-									<option th:each="departamento : ${listaDepartamentos}"
-										th:value="${departamento.id}"
-										th:text="${departamento.descripcion}" />
-
-								</select>
-
+							<label for="inputDescrip">DIRECCION:</label>	
+								<input type="text" th:field="*{direccion}" class="form-control"
+									placeholder="Direccion" maxlength="100"> <i
+									class="form-group__bar"></i>
 							</div>
-
+						</div>
+						
+						<div class="col-md-6">
+							<div class="form-group">
+							<label for="inputDescrip">TELEFONO:</label>	
+								<input type="text" th:field="*{telefono}" class="form-control"
+									placeholder="Telefono" maxlength="10"> <i
+									class="form-group__bar"></i>
+							</div>
+						</div>
+						
+						<div class="col-md-6">
+							<div class="form-group">
+							<label for="inputDescrip">USUARIO:</label>	
+								<input type="text" th:field="*{username}" class="form-control"
+									placeholder="Usuario" maxlength="20"> <i
+									class="form-group__bar"></i>
+							</div>
+						</div>
+						
+						<div class="col-md-6">
+							<div class="form-group">
+							<label for="inputDescrip">CONTRASEÑA:</label>	
+								<input type="text" th:field="*{clave}" class="form-control"
+									placeholder="Contraseña" maxlength="20"> <i
+									class="form-group__bar"></i>
+							</div>
 						</div>
 
 					</div>
@@ -88,7 +96,7 @@
 						<div class="col-md-12">
 							<div class="form-group">
 								<button type="submit" class="btn btn-primary">Actualizar</button>
-								<a href="/empleados" class="btn btn-danger">Cancelar</a>
+								<a href="/trabajador" class="btn btn-danger">Cancelar</a>
 							</div>
 						</div>
 					</div>

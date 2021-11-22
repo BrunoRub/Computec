@@ -6,13 +6,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "proveedor")
+@Getter
+@Setter
 public class Proveedor {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idprov;
+	private Long idprov;
 	
 	private String razons;
 	
@@ -35,62 +40,6 @@ public class Proveedor {
 	
 	public String getDatos() {
 		return getRazons() + " "+getNumdoc();
-	}
-	
-	public int getIdprov() {
-		return idprov;
-	}
-
-	public void setIdprov(int idprov) {
-		this.idprov = idprov;
-	}
-
-	public String getRazons() {
-		return razons;
-	}
-
-	public void setRazons(String razons) {
-		this.razons = razons;
-	}
-
-	public String getTipodoc() {
-		return tipodoc;
-	}
-
-	public void setTipodoc(String tipodoc) {
-		this.tipodoc = tipodoc;
-	}
-
-	public String getNumdoc() {
-		return numdoc;
-	}
-
-	public void setNumdoc(String numdoc) {
-		this.numdoc = numdoc;
-	}
-
-	public String getDireccion() {
-		return direccion;
-	}
-
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
-
-	public String getTelefono() {
-		return telefono;
-	}
-
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
 	}
 	
 }

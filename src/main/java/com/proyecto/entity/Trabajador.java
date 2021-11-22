@@ -9,15 +9,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "trabajador")
+@Getter
+@Setter
 public class Trabajador implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idtra;
+	private Long idtra;
 	
 	@Column(name = "nombre", nullable = false, length = 45)
 	private String nombre;
@@ -40,7 +45,7 @@ public class Trabajador implements Serializable{
 	@Column(name = "clave", nullable = false, length = 20)
 	private String clave;
 
-	public Trabajador(int idtra, String nombre, String apellido, String numdoc, String direccion, String telefono,
+	public Trabajador(Long idtra, String nombre, String apellido, String numdoc, String direccion, String telefono,
 			String username, String clave) {
 		super();
 		this.idtra = idtra;
@@ -55,70 +60,6 @@ public class Trabajador implements Serializable{
 
 	public Trabajador() {
 		super();
-	}
-
-	public int getIdtra() {
-		return idtra;
-	}
-
-	public void setIdtra(int idtra) {
-		this.idtra = idtra;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getApellido() {
-		return apellido;
-	}
-
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-
-	public String getNumdoc() {
-		return numdoc;
-	}
-
-	public void setNumdoc(String numdoc) {
-		this.numdoc = numdoc;
-	}
-
-	public String getDireccion() {
-		return direccion;
-	}
-
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
-
-	public String getTelefono() {
-		return telefono;
-	}
-
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String usuario) {
-		this.username = usuario;
-	}
-
-	public String getClave() {
-		return clave;
-	}
-
-	public void setClave(String clave) {
-		this.clave = clave;
 	}
 
 	public static long getSerialversionuid() {

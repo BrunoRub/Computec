@@ -22,12 +22,12 @@ public class IngresoServiceImp implements IngresoService{
 	}
 
 	@Override
-	public Ingreso actualziar(Ingreso ingreso) {
+	public Ingreso actualizar(Ingreso ingreso) {
 		return repository.save(ingreso);
 	}
 
 	@Override
-	public Integer eliminar(int iding) {
+	public Integer eliminar(Long iding) {
 		repository.deleteById(iding);
 		Optional<Ingreso>ing = repository.findById(iding);
 		if (ing.isEmpty()) {
@@ -42,7 +42,7 @@ public class IngresoServiceImp implements IngresoService{
 	}
 
 	@Override
-	public Optional<Ingreso> obtenerPorId(int iding) {
+	public Optional<Ingreso> obtenerPorId(Long iding) {
 		return repository.findById(iding);
 	}
 	

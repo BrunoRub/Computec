@@ -17,7 +17,7 @@ public class ClienteServiceImp implements ClienteService{
 	
 	@Override
 	public List<Cliente> listaClientes() {
-		return repository.findAll();
+		return (List<Cliente>) repository.findAll();
 	}
 
 }

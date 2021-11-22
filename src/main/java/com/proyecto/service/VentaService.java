@@ -8,6 +8,6 @@ public interface VentaService {
 
 	public List<Venta>listaVentas();	
 	public Venta registraVenta(Venta v);
-	public Integer eliminaVenta(int id);
+	public Integer eliminaVenta(Long idcategoria);
 	public Venta actualizaVenta(Venta v);
 }

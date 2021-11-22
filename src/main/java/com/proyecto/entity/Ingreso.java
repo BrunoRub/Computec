@@ -18,13 +18,18 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "ingreso")
+@Getter
+@Setter
 public class Ingreso {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int iding;
+	private Long iding;
 	
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -49,68 +54,4 @@ public class Ingreso {
 	
 	private double igv;
 
-	public int getIding() {
-		return iding;
-	}
-
-	public void setIding(int iding) {
-		this.iding = iding;
-	}
-
-	public Trabajador getTrabajador() {
-		return trabajador;
-	}
-
-	public void setTrabajador(Trabajador trabajador) {
-		this.trabajador = trabajador;
-	}
-
-	public Proveedor getProveedor() {
-		return proveedor;
-	}
-
-	public void setProveedor(Proveedor proveedor) {
-		this.proveedor = proveedor;
-	}
-
-	public Date getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(Date fecha) {
-		this.fecha = fecha;
-	}
-
-	public String getTipocom() {
-		return tipocom;
-	}
-
-	public void setTipocom(String tipocom) {
-		this.tipocom = tipocom;
-	}
-
-	public String getSerie() {
-		return serie;
-	}
-
-	public void setSerie(String serie) {
-		this.serie = serie;
-	}
-
-	public String getCorrelativo() {
-		return correlativo;
-	}
-
-	public void setCorrelativo(String correlativo) {
-		this.correlativo = correlativo;
-	}
-
-	public double getIgv() {
-		return igv;
-	}
-
-	public void setIgv(double igv) {
-		this.igv = igv;
-	}
-	
 }

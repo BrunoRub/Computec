@@ -32,7 +32,7 @@ public class ProveedorController {
 	}
 	
 	@GetMapping("{idprov}")
-	public Proveedor ProveedorId(@PathVariable int idprov){
+	public Proveedor ProveedorId(@PathVariable Long idprov){
 		return service.obtenerPorId(idprov).get();
 	}
 	
@@ -42,14 +42,14 @@ public class ProveedorController {
 	}
 	
 	@PutMapping("{idprov}")
-	public ResponseEntity<Object>actualizar(@RequestBody Proveedor proveedor, @PathVariable int idprov){
+	public ResponseEntity<Object>actualizar(@RequestBody Proveedor proveedor, @PathVariable Long idprov){
 		proveedor.setIdprov(idprov);
 		service.actualizar(proveedor);
 		return ResponseEntity.noContent().build();
 	}
 	
 	@DeleteMapping("{idprov}")
-	public void eliminar(@PathVariable int idprov) {
+	public void eliminar(@PathVariable Long idprov) {
 		service.eliminar(idprov);
 	}
 }

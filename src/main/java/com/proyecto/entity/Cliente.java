@@ -14,13 +14,18 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "cliente")
+@Getter
+@Setter
 public class Cliente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idcli;
+	private Long idcli;
 	
 	private String nombre;
 	
@@ -51,77 +56,4 @@ public class Cliente {
 	public String getDatos() {
 		return getNombre() + " "+getApellido();
 	}
-	
-	public int getIdcli() {
-		return idcli;
-	}
-
-	public void setIdcli(int idcli) {
-		this.idcli = idcli;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getApellido() {
-		return apellido;
-	}
-
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-
-	public Date getFecnac() {
-		return fecnac;
-	}
-
-	public void setFecnac(Date fecnac) {
-		this.fecnac = fecnac;
-	}
-
-	public String getTipodoc() {
-		return tipodoc;
-	}
-
-	public void setTipodoc(String tipodoc) {
-		this.tipodoc = tipodoc;
-	}
-
-	public String getNumdoc() {
-		return numdoc;
-	}
-
-	public void setNumdoc(String numdoc) {
-		this.numdoc = numdoc;
-	}
-
-	public String getDireccion() {
-		return direccion;
-	}
-
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
-
-	public String getTelefono() {
-		return telefono;
-	}
-
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-}
+}	

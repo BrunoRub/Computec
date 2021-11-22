@@ -8,8 +8,8 @@ import com.proyecto.entity.Ingreso;
 public interface IngresoService {
 
 	public Ingreso registrar(Ingreso ingreso);
-	public Ingreso actualziar(Ingreso ingreso);
-	public Integer eliminar(int iding);
+	public Ingreso actualizar(Ingreso ingreso);
+	public Integer eliminar(Long iding);
 	public List<Ingreso>listar();
-	Optional<Ingreso>obtenerPorId(int iding);
+	Optional<Ingreso>obtenerPorId(Long iding);
 }

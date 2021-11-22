@@ -31,7 +31,7 @@ public class VentaController {
 	}
 	
 	@DeleteMapping("eliminaVenta/{idven}")
-	public void eliminarVenta(@PathVariable int id) {
+	public void eliminarVenta(@PathVariable Long id) {
 		service.eliminaVenta(id);
 	}
 	

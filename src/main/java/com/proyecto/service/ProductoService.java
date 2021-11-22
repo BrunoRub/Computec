@@ -8,12 +8,8 @@ import com.proyecto.entity.Producto;
 public interface ProductoService {
 
 	Producto registrar(Producto producto);
-
-	Producto actualizar(Producto producto);
-	
-	Integer eliminar(Long id);
-	
-	Optional<Producto> obtenerPorId(Long id);
-
+	Producto actualizar(Producto producto);	
+	Integer eliminar(Long id);	
+	Optional<Producto> obtenerPorId(Long idproducto);
 	List<Producto> obtenerProducto();
 }

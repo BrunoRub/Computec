@@ -42,7 +42,7 @@ public class TrabajadorServiceImp implements TrabajadorService{
 	}
 
 	@Override
-	public Integer eliminar(int idtra) {
+	public Integer eliminar(Long idtra) {
 		repository.deleteById(idtra);
 		Optional<Trabajador>tra = repository.findById(idtra);
 		if (tra.isEmpty()) {
@@ -52,7 +52,7 @@ public class TrabajadorServiceImp implements TrabajadorService{
 	}
 
 	@Override
-	public Optional<Trabajador> obtenerPorId(int idtra) {
+	public Optional<Trabajador> obtenerPorId(Long idtra) {
 		return repository.findById(idtra);
 	}
 

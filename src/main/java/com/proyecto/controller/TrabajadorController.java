@@ -42,7 +42,7 @@ public class TrabajadorController {
 	}
 	
 	@GetMapping("{idtra}")
-	public Trabajador TrabajadorId(@PathVariable int idtra){
+	public Trabajador TrabajadorId(@PathVariable Long idtra){
 		return service.obtenerPorId(idtra).get();
 	}
 	
@@ -52,14 +52,14 @@ public class TrabajadorController {
 	}
 	
 	@PutMapping("{idtra}")
-	public ResponseEntity<Object>actualizar(@RequestBody Trabajador trabajador, @PathVariable int idtra){
+	public ResponseEntity<Object>actualizar(@RequestBody Trabajador trabajador, @PathVariable Long idtra){
 		trabajador.setIdtra(idtra);
 		service.actualizar(trabajador);
 		return ResponseEntity.noContent().build();
 	}
 	
 	@DeleteMapping("{cod_prov}")
-	public void eliminar(@PathVariable int idtra) {
+	public void eliminar(@PathVariable Long idtra) {
 		service.eliminar(idtra);
 	}
 	

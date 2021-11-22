@@ -1,9 +1,11 @@
 package com.proyecto.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import com.proyecto.entity.DetVenta;
 
-public interface DetVentaRepository extends JpaRepository<DetVenta, Integer>{
+@Repository
+public interface DetVentaRepository extends CrudRepository <DetVenta, Long>{
 
 }

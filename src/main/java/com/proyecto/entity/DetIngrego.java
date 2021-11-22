@@ -18,13 +18,18 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "detingreso")
+@Getter
+@Setter
 public class DetIngrego {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int iddeti;
+	private Long iddeti;
 
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -53,78 +58,5 @@ public class DetIngrego {
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fecv;
-
-	public int getIddeti() {
-		return iddeti;
-	}
-
-	public void setIddeti(int iddeti) {
-		this.iddeti = iddeti;
-	}
-
-	public Ingreso getIngreso() {
-		return ingreso;
-	}
-
-	public void setIngreso(Ingreso ingreso) {
-		this.ingreso = ingreso;
-	}
-
-	public Producto getProducto() {
-		return producto;
-	}
-
-	public void setProducto(Producto producto) {
-		this.producto = producto;
-	}
-
-	public double getPrecioc() {
-		return precioc;
-	}
-
-	public void setPrecioc(double precioc) {
-		this.precioc = precioc;
-	}
-
-	public double getPreciov() {
-		return preciov;
-	}
-
-	public void setPreciov(double preciov) {
-		this.preciov = preciov;
-	}
-
-	public int getStocki() {
-		return stocki;
-	}
-
-	public void setStocki(int stocki) {
-		this.stocki = stocki;
-	}
-
-	public int getStocka() {
-		return stocka;
-	}
-
-	public void setStocka(int stocka) {
-		this.stocka = stocka;
-	}
-
-	public Date getFecp() {
-		return fecp;
-	}
-
-	public void setFecp(Date fecp) {
-		this.fecp = fecp;
-	}
-
-	public Date getFecv() {
-		return fecv;
-	}
-
-	public void setFecv(Date fecv) {
-		this.fecv = fecv;
-	}
-	
 	
 }

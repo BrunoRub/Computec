@@ -27,7 +27,7 @@ public class ProveedorServiceImp implements ProveedorService{
 	}
 
 	@Override
-	public Integer eliminar(int idprov) {
+	public Integer eliminar(Long idprov) {
 		repository.deleteById(idprov);
 		Optional<Proveedor>pro = repository.findById(idprov);
 		if (pro.isEmpty()) {
@@ -42,7 +42,7 @@ public class ProveedorServiceImp implements ProveedorService{
 	}
 
 	@Override
-	public Optional<Proveedor> obtenerPorId(int idprov) {
+	public Optional<Proveedor> obtenerPorId(Long idprov) {
 		return repository.findById(idprov);
 	}
 	

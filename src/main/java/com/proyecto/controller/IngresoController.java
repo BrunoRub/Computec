@@ -32,7 +32,7 @@ public class IngresoController {
 	}
 	
 	@GetMapping("{iding}")
-	public Ingreso IngresoId(@PathVariable int iding){
+	public Ingreso IngresoId(@PathVariable Long iding){
 		return service.obtenerPorId(iding).get();
 	}
 	
@@ -42,14 +42,14 @@ public class IngresoController {
 	}
 	
 	@PutMapping("{iding}")
-	public ResponseEntity<Object>actualizar(@RequestBody Ingreso ingreso, @PathVariable int iding){
+	public ResponseEntity<Object>actualizar(@RequestBody Ingreso ingreso, @PathVariable Long iding){
 		ingreso.setIding(iding);
-		service.actualziar(ingreso);
+		service.actualizar(ingreso);
 		return ResponseEntity.noContent().build();
 	}
 	
 	@DeleteMapping("{iding}")
-	public void eliminar(@PathVariable int iding) {
+	public void eliminar(@PathVariable Long iding) {
 		service.eliminar(iding);
 	}
 
