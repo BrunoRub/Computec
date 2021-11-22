@@ -45,7 +45,7 @@ public class TrabajadorServiceImp implements TrabajadorService{
 	public Integer eliminar(Long idtra) {
 		repository.deleteById(idtra);
 		Optional<Trabajador>tra = repository.findById(idtra);
-		if (tra.isEmpty()) {
+		if (tra.isPresent()) {
 			return -1;
 		}
 		return 1;

@@ -45,6 +45,7 @@ public class Trabajador implements Serializable{
 	@Column(name = "clave", nullable = false, length = 20)
 	private String clave;
 
+	/*
 	public Trabajador(Long idtra, String nombre, String apellido, String numdoc, String direccion, String telefono,
 			String username, String clave) {
 		super();
@@ -61,6 +62,7 @@ public class Trabajador implements Serializable{
 	public Trabajador() {
 		super();
 	}
+	*/
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;

@@ -6,6 +6,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,8 +22,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.proyecto.entity.Trabajador;
 import com.proyecto.service.TrabajadorService;
 
-@RestController
-@RequestMapping("/trabajador")
+@Controller
+//@RestController
+//@RequestMapping("/trabajador")
 public class TrabajadorController {
 	
 	public Trabajador trabajador;
@@ -36,6 +38,7 @@ public class TrabajadorController {
 		return this.trabajador;
 	}*/
 	
+	/*
 	@GetMapping("/lista")
 	public List<Trabajador>listar(){
 		return service.listar();
@@ -95,43 +98,43 @@ public class TrabajadorController {
 		}
 		return "redirect:/auth/login";
 	}
+	*/
 	
-	/*
 	
-	@GetMapping
+	@GetMapping("/trabajador")
 	public String lista(Model map){
-		map.addAttribute("trabajador", service.listar());		
+		map.addAttribute("listarTrabajador", service.listar());		
 		return "trabajador/listar";
 	}
 	
-	@GetMapping("/nuevo")
+	@GetMapping("/trabajador/nuevo")
 	public String nuevo(Model map){
 		map.addAttribute("trabajador", new Trabajador());		
 		return "trabajador/nuevo";
 	}
 	
-	@PostMapping("/crea")
+	@PostMapping("/trabajador/crear")
 	public String crea(@ModelAttribute("trabajador")Trabajador trabajador){
 		service.registrar(trabajador);
 		return "redirect:/trabajador";
 	}
 	
-	@GetMapping("/edita/{idtra}")
-	public String edita(@ModelAttribute("idtra")Integer idtra, Model map){
+	@GetMapping("/trabajador/editar/{idtra}")
+	public String edita(@ModelAttribute("idtra")Long idtra, Model map){
 		map.addAttribute("trabajador", service.obtenerPorId(idtra));		
 		return "trabajador/editar";
 	}
 	
-	@PostMapping("/actualiza")
+	@PostMapping("/trabajador/actualizar")
 	public String actualiza(@ModelAttribute("trabajador")Trabajador trabajador){
 		service.actualizar(trabajador);		
 		return "redirect:/trabajador";
 	}
 	
-	@GetMapping("/elimina/{idtra}")
-	public String elimina(@ModelAttribute("idtra")Integer idtra){
+	@GetMapping("/trabajador/eliminar/{idtra}")
+	public String elimina(@ModelAttribute("idtra")Long idtra){
 		service.eliminar(idtra);		
 		return "redirect:/trabajador";
 	}
-	*/
+	
 }

@@ -56,17 +56,21 @@
 								<th>Documento</th>
 								<th>Dirección</th>
 								<th>Telefono</th>
+								<th>Usuario</th>
+								<th>Contraseña</th>
 							</tr>
 						</thead>
 						<tbody>
-							<th:block th:each="trabajador : ${listar}">
+							<th:block th:each="trabajador : ${listarTrabajador}">
 								<tr>
 									<td th:text="${trabajador.idtra}"></td>
 									<td th:text="${trabajador.nombre}"></td>
 									<td th:text="${trabajador.apellido}"></td>
-									<td th:text="${trabajador.documento}"></td>
+									<td th:text="${trabajador.numdoc}"></td>
 									<td th:text="${trabajador.direccion}"></td>
-									<td th:text="${trabajador.telefono}"></td>                                         
+									<td th:text="${trabajador.telefono}"></td>
+									<td th:text="${trabajador.username}"></td>
+									<td th:text="${trabajador.clave}"></td>                                         
 									<td><a class="btn btn-primary"
 										th:href="@{/trabajador/editar/{idtra}(id=${trabajador.idtra})}"> <i
 											class="zmdi zmdi-edit zmdi-hc-fw"></i>
@@ -97,9 +101,9 @@
 		function eliminarTrabajador(id){
 			swal({
 
-                title: 'Are you sure?',
+                title: '¿Estas seguro?',
 
-                text: 'You will not be able to recover this imaginary file!',
+                text: 'No podrás recuperar este archivo imaginario!',
 
                 type: 'warning',
 
