@@ -20,80 +20,83 @@
 
 				<h4 class="card-title">Editar empleado</h4>
 
-				<form th:action="@{/empleados/crear}" th:method="post"
-					th:object="${empleado}">
+				<form th:action="@{/ingreso/actualizar}" th:method="post"
+					th:object="${ingreso}">
 					
 					
-					<input type="hidden" th:field="*{id}"> 
+					<input type="hidden" th:field="*{iding}"> 
 					<div class="form-row">
 
 						<div class="col-md-6">
-
 							<div class="form-group">
-
-								<input type="text" th:field="*{nombre}" class="form-control"
-									placeholder="Nombres" maxlength="50"> <i
-									class="form-group__bar"></i>
-
+							<label>TRABAJADOR:</label>
+								<select th:field="*{trabajador.idtra}" class="form-control">
+									<option value="-1">Seleccione</option>
+									<option th:each="trabajador : ${listaTrabajador}"
+										th:value="${trabajador.idtra}"
+										th:text="${trabajador.nombre}" />
+								</select>
 							</div>
-
+						</div>
+						
+						<div class="col-md-6">
+							<div class="form-group">
+							<label>PROVEEDOR:</label>
+								<select th:field="*{proveedor.idprov}" class="form-control">
+									<option value="-1">Seleccione</option>
+									<option th:each="proveedor : ${listaProveedor}"
+										th:value="${proveedor.idprov}"
+										th:text="${proveedor.razons}" />
+								</select>
+							</div>
 						</div>
 
 						<div class="col-md-6">
-
 							<div class="form-group">
-
-								<input type="text" th:field="*{salario}" class="form-control"
-									placeholder="Sueldo" maxlength="50"> <i
-									class="form-group__bar"></i>
-
-							</div>
-
-						</div>
-
-						<div class="col-md-6">
-
-							<div class="form-group">
-
-								<input type="text" th:field="*{fechaIngreso}"
+								<input type="text" th:field="*{fecha}"
 									class="validate[required] form-control date-picker hidden-sm-down"
 									placeholder="Fecha de Ingreso" maxlength="50"> <i
 									class="form-group__bar"></i>
-
 							</div>
-
-						</div>
-
+						</div>	
+						
 						<div class="col-md-6">
-
 							<div class="form-group">
-
-								<select th:field="*{departamento.id}" class="form-control">
-
-									<option value="-1">Seleccione</option>
-
-									<option th:each="departamento : ${listaDepartamentos}"
-										th:value="${departamento.id}"
-										th:text="${departamento.descripcion}" />
-
-								</select>
-
+							<label for="inputStock">COMPROBANTE:</label>
+								<input type="text" th:field="*{tipocom}" class="form-control"
+									placeholder="Tipo de Comprobante" maxlength="20"> <i
+									class="form-group__bar"></i>
 							</div>
-
+						</div>	
+						
+						<div class="col-md-6">
+							<div class="form-group">
+							<label for="inputStock">SERIE:</label>
+								<input type="text" th:field="*{serie}" class="form-control"
+									placeholder="Serie" maxlength="4"> <i
+									class="form-group__bar"></i>
+							</div>
 						</div>
-
+						
+						<div class="col-md-6">
+							<div class="form-group">
+							<label for="inputStock">CORRELATIVO:</label>
+								<input type="text" th:field="*{correlativo}" class="form-control"
+									placeholder="Tipo de Comprobante" maxlength="7"> <i
+									class="form-group__bar"></i>
+							</div>
+						</div>
 					</div>
 
 					<div class="form-row">
 						<div class="col-md-12">
 							<div class="form-group">
 								<button type="submit" class="btn btn-primary">Actualizar</button>
-								<a href="/empleados" class="btn btn-danger">Cancelar</a>
+								<a href="/ingreso" class="btn btn-danger">Cancelar</a>
 							</div>
 						</div>
 					</div>
-
-
+					
 				</form>
 
 			</div>

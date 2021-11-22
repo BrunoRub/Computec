@@ -51,7 +51,5 @@ public class Ingreso {
 	private String serie;
 	
 	private String correlativo;
-	
-	private double igv;
 
 }

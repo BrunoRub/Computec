@@ -30,7 +30,7 @@ public class IngresoServiceImp implements IngresoService{
 	public Integer eliminar(Long iding) {
 		repository.deleteById(iding);
 		Optional<Ingreso>ing = repository.findById(iding);
-		if (ing.isEmpty()) {
+		if (ing.isPresent()) {
 			return -1;
 		}
 		return 1;

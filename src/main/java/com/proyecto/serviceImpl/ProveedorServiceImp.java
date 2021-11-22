@@ -30,7 +30,7 @@ public class ProveedorServiceImp implements ProveedorService{
 	public Integer eliminar(Long idprov) {
 		repository.deleteById(idprov);
 		Optional<Proveedor>pro = repository.findById(idprov);
-		if (pro.isEmpty()) {
+		if (pro.isPresent()) {
 			return -1;
 		}
 		return 1;

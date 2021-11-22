@@ -27,7 +27,7 @@ public class Categoria {
 	@Column(name = "descripcion", length = 100, nullable = false)
 	private String descripcion;
 
-	@Column(columnDefinition = "TINTINT")
+	//@Column(columnDefinition = "TINTINT")
 	//@Column(name = "estado", length = 100, nullable = false)
 	private int estado;
 

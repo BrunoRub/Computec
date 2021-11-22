@@ -28,14 +28,11 @@ public class Proveedor {
 	private String direccion;
 	
 	private String telefono;
-	
-	private String email;
 
 	@Override
 	public String toString() {
 		return "Cliente [idprov=" + idprov + ", razons=" + razons + ", tipodoc=" + tipodoc + ", numdoc="
-				+ numdoc + ", direccion=" + direccion + ", telefono=" + telefono + ", email=" + email
-				+ "]";
+				+ numdoc + ", direccion=" + direccion + ", telefono=" + telefono + "]";
 	}
 	
 	public String getDatos() {
