@@ -35,6 +35,7 @@ public class Producto {
 	@Column(name = "precio", precision = 10, scale = 2)
 	private BigDecimal precio;
 
+	@Column(name = "stock", nullable = false, length = 10)
 	private int stock;
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")

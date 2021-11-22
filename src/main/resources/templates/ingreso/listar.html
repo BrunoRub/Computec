@@ -54,7 +54,6 @@
 								<th>Trabajador</th>
 								<th>Proveedor</th>
 								<th>Fecha</th>
-								<th>Comprobante</th>
 								<th>Serie</th>
 								<th>Correlativo</th>
 							</tr>
@@ -66,7 +65,6 @@
 									<td th:text="${ingreso.trabajador.nombre}"></td>
 									<td th:text="${ingreso.proveedor.razons}"></td>
 									<td th:text="${ingreso.fecha}"></td>
-									<td th:text="${ingreso.tipocom}"></td>
 									<td th:text="${ingreso.serie}"></td>
 									<td th:text="${ingreso.correlativo}"></td>						
 									<td><a class="btn btn-primary"
@@ -99,9 +97,9 @@
 		function eliminarIngreso(id){
 			swal({
 
-                title: 'Are you sure?',
+                title: '¿Estas seguro?',
 
-                text: 'You will not be able to recover this imaginary file!',
+                text: 'No podrás recuperar este archivo imaginario!!',
 
                 type: 'warning',
 
@@ -111,7 +109,7 @@
 
                 confirmButtonClass: 'btn btn-danger',
 
-                confirmButtonText: 'Yes, delete it!',
+                confirmButtonText: 'Eliminar',
 
                 cancelButtonClass: 'btn btn-secondary'
 

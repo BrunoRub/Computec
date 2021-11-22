@@ -2,6 +2,7 @@ package com.proyecto.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -46,10 +47,10 @@ public class Ingreso {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fecha;
 	
-	private String tipocom;
-	
+	@Column(name = "serie", nullable = false, length = 4)
 	private String serie;
 	
+	@Column(name = "correlativo", nullable = false, length = 7)
 	private String correlativo;
 
 }

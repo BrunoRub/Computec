@@ -1,5 +1,6 @@
 package com.proyecto.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -34,10 +35,13 @@ public class DetVenta {
 	@JoinColumn(name = "iddeti")
 	private DetIngrego detingreso;
 	
+	@Column(name = "cantidad", nullable = false, length = 10)
 	private int cantidad;
 	
+	@Column(name = "preciov", nullable = false, length = 10)
 	private double preciov;
 	
+	@Column(name = "descuento", nullable = false, length = 10)
 	private double descuento;
 
 	

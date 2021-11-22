@@ -28,13 +28,13 @@ public class Trabajador{
 	@Column(name = "apellido", nullable = false, length = 45)
 	private String apellido;
 	
-	@Column(name = "numdoc", nullable = false, length = 8)
-	private String numdoc;
+	@Column(name = "dni", nullable = false, length = 8)
+	private String dni;
 	
 	@Column(name = "direccion", nullable = false, length = 100)
 	private String direccion;
 	
-	@Column(name = "telefono", nullable = false, length = 10)
+	@Column(name = "telefono", nullable = false, length = 9)
 	private String telefono;
 	
 	@Column(name = "username", nullable = false, length = 20)

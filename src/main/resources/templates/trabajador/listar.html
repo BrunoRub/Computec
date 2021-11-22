@@ -53,7 +53,7 @@
 								<th>ID</th>
 								<th>Nombre</th>
 								<th>Apellido</th>
-								<th>Documento</th>
+								<th>Dni</th>
 								<th>Dirección</th>
 								<th>Telefono</th>
 								<th>Usuario</th>
@@ -66,7 +66,7 @@
 									<td th:text="${trabajador.idtra}"></td>
 									<td th:text="${trabajador.nombre}"></td>
 									<td th:text="${trabajador.apellido}"></td>
-									<td th:text="${trabajador.numdoc}"></td>
+									<td th:text="${trabajador.dni}"></td>
 									<td th:text="${trabajador.direccion}"></td>
 									<td th:text="${trabajador.telefono}"></td>
 									<td th:text="${trabajador.username}"></td>
@@ -113,7 +113,7 @@
 
                 confirmButtonClass: 'btn btn-danger',
 
-                confirmButtonText: 'Yes, delete it!',
+                confirmButtonText: 'Eliminar',
 
                 cancelButtonClass: 'btn btn-secondary'
 

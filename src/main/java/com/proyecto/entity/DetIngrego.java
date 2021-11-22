@@ -2,6 +2,7 @@ package com.proyecto.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -41,12 +42,16 @@ public class DetIngrego {
 	@JoinColumn(name = "idpro")
 	private Producto producto;
 	
+	@Column(name = "precioc", nullable = false, length = 10)
 	private double precioc;
-	
+		
+	@Column(name = "preciov", nullable = false, length = 10)
 	private double preciov;
 	
+	@Column(name = "stocki", nullable = false, length = 10)
 	private int stocki;
 	
+	@Column(name = "stocka", nullable = false, length = 10)
 	private int stocka;
 	
 	@JsonFormat(pattern = "yyyy-MM-dd")
