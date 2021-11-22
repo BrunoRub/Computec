@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 
 <title>Listado de Proveedores</title>
 <th:block th:insert="fragments/resources"></th:block>
@@ -29,8 +29,8 @@
 
 						<div class="form-group">
 
-							<a href="/trabajador/nuevo" class="btn btn-primary">Nuevo
-								empleado</a>
+							<a href="/proveedor/nuevo" class="btn btn-primary">Nuevo
+								Proveedor</a>
 
 						</div>
 
@@ -44,34 +44,35 @@
 
 		<div class="card">
 			<div class="card-body">
-				<h4 class="card-title">Lista de empleados</h4>
+				<h4 class="card-title">Lista de Proveedores</h4>
 
 				<div class="table-responsive">
-					<table id="idTableEmpleado" class="table table-bordered">
+					<table id="idTableProveedor" class="table table-bordered">
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th>Empleado</th>
-								<th>Sueldo</th>
-								<th>Fecha de Ingreso</th>
-								<th>Departamento</th>
-								<th>Opciones</th>
+								<th>Razón Social</th>
+								<th>Tipo Doc</th>
+								<th>Documento</th>
+								<th>Dirección</th>
+								<th>Telefono</th>
 							</tr>
 						</thead>
 						<tbody>
-							<th:block th:each="trabajador : ${lista}">
+							<th:block th:each="proveedor : ${listarProveedor}">
 								<tr>
-									<td th:text="${trabajador.id}"></td>
-									<td th:text="${trabajador.nombre}"></td>
-									<td th:text="${trabajador.salario}"></td>
-									<td th:text="${trabajador.fechaIngreso}"></td>
-									<td th:text="${empleado.departamento.descripcion}"></td>
+									<td th:text="${proveedor.idprov}"></td>
+									<td th:text="${proveedor.razons}"></td>
+									<td th:text="${proveedor.tipodoc}"></td>
+									<td th:text="${proveedor.numdoc}"></td>
+									<td th:text="${proveedor.direccion}"></td>
+									<td th:text="${proveedor.telefono}"></td>									
 									<td><a class="btn btn-primary"
-										th:href="@{/empleados/editar/{id}(id=${empleado.id})}"> <i
+										th:href="@{/proveedor/editar/{id}(id=${proveedor.idprov})}"> <i
 											class="zmdi zmdi-edit zmdi-hc-fw"></i>
 
 									</a> <a class="btn btn-danger" href="#"
-										th:onclick="'eliminarEmpleado(' + ${empleado.id} +')'"> <i
+										th:onclick="'eliminarProveedor(' + ${proveedor.idprov} +')'"> <i
 											class="zmdi zmdi-delete zmdi-hc-fw"></i>
 
 									</a></td>
@@ -89,11 +90,11 @@
 
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$("#idTableEmpleado").DataTable();
+			$("#idTableProveedor").DataTable();
 		});
 		
 		
-		function eliminarEmpleado(id){
+		function eliminarProveedor(id){
 			swal({
 
                 title: 'Are you sure?',
@@ -117,13 +118,13 @@
 				if(result.value){
 					
 					$.ajax({
-						url: "/empleados/eliminar/" + id,
+						url: "/proveedor/eliminar/" + id,
 						type: "GET",
 						success: function(){
 
                 			swal("Ok", "Se ha eliminado", "success").then(function(){
 
-                				window.location = "/empleados";
+                				window.location = "/proveedor";
 
                             });
 
