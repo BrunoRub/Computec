@@ -16,9 +16,7 @@ import lombok.Setter;
 @Table(name = "trabajador")
 @Getter
 @Setter
-public class Trabajador implements Serializable{
-	
-	private static final long serialVersionUID = 1L;
+public class Trabajador{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -63,10 +61,6 @@ public class Trabajador implements Serializable{
 		super();
 	}
 	*/
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 
 	/*
 	@Override

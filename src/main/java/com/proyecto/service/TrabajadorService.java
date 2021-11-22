@@ -13,5 +13,5 @@ public interface TrabajadorService {
 	public Integer eliminar(Long idtra);
 	public List<Trabajador>listar();	
 	Optional<Trabajador>obtenerPorId(Long idtra);
-	public Trabajador findByUsername(String username);
+	//public Trabajador findByUsername(String username);
 }

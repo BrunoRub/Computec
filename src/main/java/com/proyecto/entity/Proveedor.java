@@ -29,6 +29,7 @@ public class Proveedor {
 	
 	private String telefono;
 
+	/*
 	@Override
 	public String toString() {
 		return "Cliente [idprov=" + idprov + ", razons=" + razons + ", tipodoc=" + tipodoc + ", numdoc="
@@ -38,5 +39,5 @@ public class Proveedor {
 	public String getDatos() {
 		return getRazons() + " "+getNumdoc();
 	}
-	
+	*/
 }

@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.proyecto.entity.Producto;
 import com.proyecto.entity.Trabajador;
 import com.proyecto.service.TrabajadorService;
 
@@ -27,7 +28,7 @@ import com.proyecto.service.TrabajadorService;
 //@RequestMapping("/trabajador")
 public class TrabajadorController {
 	
-	public Trabajador trabajador;
+	//public Trabajador trabajador;
 	
 	@Autowired
 	private TrabajadorService service;
@@ -102,7 +103,7 @@ public class TrabajadorController {
 	
 	
 	@GetMapping("/trabajador")
-	public String lista(Model map){
+	public String listar(Model map){
 		map.addAttribute("listarTrabajador", service.listar());		
 		return "trabajador/listar";
 	}
@@ -114,20 +115,20 @@ public class TrabajadorController {
 	}
 	
 	@PostMapping("/trabajador/crear")
-	public String crea(@ModelAttribute("trabajador")Trabajador trabajador){
+	public String crear(@ModelAttribute("trabajador")Trabajador trabajador){
 		service.registrar(trabajador);
 		return "redirect:/trabajador";
 	}
 	
-	@GetMapping("/trabajador/editar/{idtra}")
-	public String edita(@ModelAttribute("idtra")Long idtra, Model map){
-		map.addAttribute("trabajador", service.obtenerPorId(idtra));		
+	@GetMapping("trabajador/editar/{idtra}")
+	public String editar(@ModelAttribute("idtra") Long idtra, Model map) {
+		map.addAttribute("trabajador", service.obtenerPorId(idtra));
 		return "trabajador/editar";
 	}
 	
-	@PostMapping("/trabajador/actualizar")
-	public String actualiza(@ModelAttribute("trabajador")Trabajador trabajador){
-		service.actualizar(trabajador);		
+	@PostMapping("trabajador/actualizar")
+	public String actualizar(@ModelAttribute("trabajador") Trabajador trabajador) {
+		service.actualizar(trabajador);
 		return "redirect:/trabajador";
 	}
 	

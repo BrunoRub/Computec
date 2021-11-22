@@ -25,6 +25,7 @@ public class TrabajadorServiceImp implements TrabajadorService{
 		return repository.iniciarSesion(usuario, clave);
 	}
 */
+	
 	@Override
 	public Trabajador registrar(Trabajador trabajador) {
 		//trabajador.setClave(encoder.encode(trabajador.getClave()));
@@ -56,11 +57,12 @@ public class TrabajadorServiceImp implements TrabajadorService{
 		return repository.findById(idtra);
 	}
 
+	/*
 	@Override
 	public Trabajador findByUsername(String username) {
 		return repository.findByUsername(username);
 	}
-
+	*/
 	
 
 }

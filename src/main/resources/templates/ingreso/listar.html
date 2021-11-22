@@ -60,11 +60,11 @@
 							</tr>
 						</thead>
 						<tbody>
-							<th:block th:each="ingreso : ${listarIngreso}">
+							<th:block th:each="ingreso : ${listarIngresos}">
 								<tr>
 									<td th:text="${ingreso.iding}"></td>
-									<td th:text="${trabajador.nombre}"></td>
-									<td th:text="${proveedor.razons}"></td>
+									<td th:text="${ingreso.trabajador.nombre}"></td>
+									<td th:text="${ingreso.proveedor.razons}"></td>
 									<td th:text="${ingreso.fecha}"></td>
 									<td th:text="${ingreso.tipocom}"></td>
 									<td th:text="${ingreso.serie}"></td>
