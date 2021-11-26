@@ -61,18 +61,30 @@
 						
 						<div class="col-md-6">
 							<div class="form-group">
-							<label for="inputStock">SERIE:</label>
-								<input type="text" th:field="*{serie}" class="form-control"
-									placeholder="Serie" maxlength="4"> <i
+							<label>PRODUCTO:</label>
+								<select th:field="*{producto.idproducto}" class="form-control">
+									<option value="-1">Seleccione</option>
+									<option th:each="producto : ${listarProdutos}"
+										th:value="${producto.idproducto}"
+										th:text="${producto.descripcion}" />
+								</select>
+							</div>
+						</div>
+						
+						<div class="col-md-6">
+							<div class="form-group">
+							<label for="inputStock">PRECIO:</label>
+								<input type="text" th:field="*{precio}" class="form-control"
+									placeholder="Precio" maxlength="10"> <i
 									class="form-group__bar"></i>
 							</div>
 						</div>
 						
 						<div class="col-md-6">
 							<div class="form-group">
-							<label for="inputStock">CORRELATIVO:</label>
-								<input type="text" th:field="*{correlativo}" class="form-control"
-									placeholder="Tipo de Comprobante" maxlength="7"> <i
+							<label for="inputStock">Cantidad:</label>
+								<input type="text" th:field="*{cantidad}" class="form-control"
+									placeholder="Cantidad" maxlength="10"> <i
 									class="form-group__bar"></i>
 							</div>
 						</div>	

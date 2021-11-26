@@ -47,10 +47,15 @@ public class Ingreso {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fecha;
 	
-	@Column(name = "serie", nullable = false, length = 4)
-	private String serie;
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "idproducto")
+	private Producto producto;
 	
-	@Column(name = "correlativo", nullable = false, length = 7)
-	private String correlativo;
-
+	@Column(name = "precio", nullable = false, length = 10)
+	private double precio;
+	
+	@Column(name = "cantidad", nullable = false, length = 10)
+	private int cantidad;
+	
 }

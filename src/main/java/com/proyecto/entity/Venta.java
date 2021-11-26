@@ -49,14 +49,16 @@ public class Venta {
 	
 	@Column(name = "tipocom", nullable = false, length = 20)
 	private String tipocom;
-	
-	@Column(name = "serie", nullable = false, length = 4)
-	private String serie;
-	
-	@Column(name = "correlativo", nullable = false, length = 7)
-	private String correlativo;
-	
-	@Column(name = "igv", nullable = false, length = 4)
-	private String igv;
 
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "idpro")
+	private Producto producto;
+	
+	@Column(name = "cantidad", nullable = false, length = 10)
+	private int cantidad;
+	
+	@Column(name = "preciov", nullable = false, length = 10)
+	private double preciov;
+	
 }

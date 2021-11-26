@@ -32,17 +32,13 @@ public class DetVenta {
 	
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "iddeti")
-	private DetIngrego detingreso;
+	@JoinColumn(name = "idpro")
+	private Producto producto;
 	
 	@Column(name = "cantidad", nullable = false, length = 10)
 	private int cantidad;
 	
 	@Column(name = "preciov", nullable = false, length = 10)
 	private double preciov;
-	
-	@Column(name = "descuento", nullable = false, length = 10)
-	private double descuento;
-
 	
 }

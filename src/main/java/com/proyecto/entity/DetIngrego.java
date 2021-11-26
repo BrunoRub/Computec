@@ -48,11 +48,8 @@ public class DetIngrego {
 	@Column(name = "preciov", nullable = false, length = 10)
 	private double preciov;
 	
-	@Column(name = "stocki", nullable = false, length = 10)
-	private int stocki;
-	
-	@Column(name = "stocka", nullable = false, length = 10)
-	private int stocka;
+	@Column(name = "stock", nullable = false, length = 10)
+	private int stock;
 	
 	@JsonFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)

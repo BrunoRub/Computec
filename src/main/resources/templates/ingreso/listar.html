@@ -54,8 +54,9 @@
 								<th>Trabajador</th>
 								<th>Proveedor</th>
 								<th>Fecha</th>
-								<th>Serie</th>
-								<th>Correlativo</th>
+								<th>Producto</th>
+								<th>Precio</th>
+								<th>Cantidad</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -65,8 +66,9 @@
 									<td th:text="${ingreso.trabajador.nombre}"></td>
 									<td th:text="${ingreso.proveedor.razons}"></td>
 									<td th:text="${ingreso.fecha}"></td>
-									<td th:text="${ingreso.serie}"></td>
-									<td th:text="${ingreso.correlativo}"></td>						
+									<td th:text="${ingreso.prodcuto.descripcion}"></td>
+									<td th:text="${ingreso.precio}"></td>
+									<td th:text="${ingreso.cantidad}"></td>						
 									<td><a class="btn btn-primary"
 										th:href="@{/ingreso/editar/{id}(id=${ingreso.iding})}"> <i
 											class="zmdi zmdi-edit zmdi-hc-fw"></i>
