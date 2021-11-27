@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.proyecto.entity.Cliente;
-import com.proyecto.entity.Producto;
+//import com.proyecto.entity.Producto;
 import com.proyecto.repository.ClienteRepository;
 import com.proyecto.service.ClienteService;
 

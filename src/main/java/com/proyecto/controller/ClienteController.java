@@ -1,7 +1,5 @@
 package com.proyecto.controller;
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,11 +16,10 @@ public class ClienteController {
 		@Autowired
 		ClienteService service;
 		
-		@GetMapping("/clientes")
+		@GetMapping("/cliente")
 		public String listarCliente(Model map){
 			map.addAttribute("listaCliente", service.listaClientes());
-			return "cliente/listar";
-					
+			return "cliente/listar";					
 		}
 		
 		@GetMapping("/cliente/nuevo")
@@ -38,8 +35,8 @@ public class ClienteController {
 		}
 		
 		@GetMapping("cliente/editar/{idcli}")
-		public String clienteEditar(@ModelAttribute("id") Long id, Model map) {
-			map.addAttribute("cliente", service.obtenerPorid(id));
+		public String clienteEditar(@ModelAttribute("idcli") Long idcli, Model map) {
+			map.addAttribute("cliente", service.obtenerPorid(idcli));
 			return "cliente/editar";
 		}
 		
@@ -49,16 +46,10 @@ public class ClienteController {
 			return "redirect:/cliente";
 		}
 		
-		@GetMapping("cliente/eliminar/{id}")
-		public String clienteEliminar(@ModelAttribute("id") Long id) {
-			service.eliminarCliente(id);
+		@GetMapping("cliente/eliminar/{idcli}")
+		public String clienteEliminar(@ModelAttribute("idcli") Long idcli) {
+			service.eliminarCliente(idcli);
 			return "redirect:/cliente";
 		}
-
-		
-		
-		
-		
-		
 		
 }

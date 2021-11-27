@@ -31,7 +31,7 @@ public class VentaController {
 	
 	
 	
-	@GetMapping("/ventas")
+	@GetMapping("/venta")
 	public String listaVenta(Model map){
 		map.addAttribute("listaVenta", ventaService.listaVentas());
 		return "venta/listar";
@@ -53,9 +53,9 @@ public class VentaController {
 	}
 	
 	@GetMapping("venta/editar/{idven}")
-	public String ventaEditar(@ModelAttribute("idven") Long id, Model map) {
+	public String ventaEditar(@ModelAttribute("idven") Long ididven, Model map) {
 		
-		map.addAttribute("venta", ventaService.obtenerPorId(id));
+		map.addAttribute("venta", ventaService.obtenerPorId(ididven));
 		map.addAttribute("listaProducto", productoService.obtenerProducto());
 		map.addAttribute("listaTrabajador",trabajadorService.listar());
 		map.addAttribute("listaCliente", clienteService.listaClientes());
@@ -67,9 +67,9 @@ public class VentaController {
 		return "redirect:/venta";
 	}
 	
-	@GetMapping("venta/eliminar/{id}")
-	public String productoEliminar(@ModelAttribute("id") Long id) {
-		productoService.eliminar(id);
+	@GetMapping("venta/eliminar/{ididven}")
+	public String productoEliminar(@ModelAttribute("ididven") Long idven) {
+		productoService.eliminar(idven);
 		return "redirect:/venta";
 	}
 	

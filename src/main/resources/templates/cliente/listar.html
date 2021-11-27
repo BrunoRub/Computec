@@ -1,52 +1,34 @@
 <!DOCTYPE html>
-
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
-
-<meta charset="ISO-8859-1">
-
+<meta charset="UTF-8">
 <title>Listado de Clientes</title>
 <th:block th:insert="fragments/resources"></th:block>
-
 </head>
+
 <body data-ma-theme="blue">
 	<th:block th:insert="fragments/header"></th:block>
-	<th:block th:insert="fragments/menu"></th:block>
+	<th:block th:insert="fragments/menu"></th:block>	
 	<section class="content">
-
+	
 		<div class="card">
-
 			<div class="card-body">
-
 				<h4 class="card-title">Clientes</h4>
-
-
-
 				<div class="form-row">
-
 					<div class="col-m-6">
-
 						<div class="form-group">
-
 							<a href="/cliente/nuevo" class="btn btn-primary">Registra Cliente</a>
-
 						</div>
-
 					</div>
-
 				</div>
-
 			</div>
-
 		</div>
 
 		<div class="card">
 			<div class="card-body">
 				<h4 class="card-title">Lista de Clientes</h4>
-
 				<div class="table-responsive">
-					<table id="idTableEmpleado" class="table table-bordered">
+					<table id="idTableCliente" class="table table-bordered">
 						<thead>
 							<tr>
 								<th>ID</th>
@@ -79,63 +61,42 @@
 							</th:block>
 						</tbody>
 					</table>
-
 					<div class="table-responsive"></div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$("#idTableEmpleado").DataTable();
+			$("#idTableCliente").DataTable();
 		});
-		
 		
 		function eliminarCliente(id){
 			swal({
-
-                title: 'Are you sure?',
-
-                text: 'You will not be able to recover this imaginary file!',
-
+                title: '¿Estas seguro?',
+                text: 'No podrás recuperar este archivo imaginario!',
                 type: 'warning',
-
                 showCancelButton: true,
-
                 buttonsStyling: false,
-
                 confirmButtonClass: 'btn btn-danger',
-
-                confirmButtonText: 'Yes, delete it!',
-
-                cancelButtonClass: 'btn btn-secondary'
-
-            }).then(function(result){
-				
-				if(result.value){
-					
+                confirmButtonText: 'Eliminar',
+                cancelButtonClass: 'btn btn-secondary',
+                cancelButtonText: 'Cancelar',
+            }).then(function(result){				
+				if(result.value){					
 					$.ajax({
 						url: "/cliente/eliminar/" + id,
 						type: "GET",
 						success: function(){
-
                 			swal("Ok", "Se ha eliminado", "success").then(function(){
-
-                				window.location = "/clientes";
-
+                				window.location = "/cliente";
                             });
-
                 		}
 					})
-				}
-				
-				
+				}					
 			});
-		}
-		
-		
+		}	
 	</script>
 
 </body>

@@ -1,51 +1,33 @@
 <!DOCTYPE html>
-
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
-
 <meta charset="UTF-8">
-
 <title>Listado de Trabajadores</title>
 <th:block th:insert="fragments/resources"></th:block>
-
 </head>
+
 <body data-ma-theme="blue">
 	<th:block th:insert="fragments/header"></th:block>
 	<th:block th:insert="fragments/menu"></th:block>
 	<section class="content">
 
 		<div class="card">
-
 			<div class="card-body">
-
 				<h4 class="card-title">Trabajadores</h4>
-
-
-
 				<div class="form-row">
-
 					<div class="col-m-6">
-
 						<div class="form-group">
-
 							<a href="/trabajador/nuevo" class="btn btn-primary">Nuevo
 								Trabajador</a>
-
 						</div>
-
 					</div>
-
 				</div>
-
 			</div>
-
 		</div>
 
 		<div class="card">
 			<div class="card-body">
 				<h4 class="card-title">Lista de Trabajadores</h4>
-
 				<div class="table-responsive">
 					<table id="idTableTrabajador" class="table table-bordered">
 						<thead>
@@ -84,63 +66,42 @@
 							</th:block>
 						</tbody>
 					</table>
-
 					<div class="table-responsive"></div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$("#idTableTrabajador").DataTable();
 		});
 		
-		
 		function eliminarTrabajador(id){
 			swal({
-
                 title: '¿Estas seguro?',
-
                 text: 'No podrás recuperar este archivo imaginario!',
-
                 type: 'warning',
-
                 showCancelButton: true,
-
                 buttonsStyling: false,
-
                 confirmButtonClass: 'btn btn-danger',
-
                 confirmButtonText: 'Eliminar',
-
-                cancelButtonClass: 'btn btn-secondary'
-
-            }).then(function(result){
-				
-				if(result.value){
-					
+                cancelButtonClass: 'btn btn-secondary',
+                cancelButtonText: 'Cancelar',
+            }).then(function(result){				
+				if(result.value){					
 					$.ajax({
 						url: "/trabajador/eliminar/" + id,
 						type: "GET",
 						success: function(){
-
                 			swal("Ok", "Se ha eliminado", "success").then(function(){
-
                 				window.location = "/trabajador";
-
                             });
-
                 		}
 					})
-				}
-				
-				
+				}					
 			});
-		}
-		
-		
+		}	
 	</script>
 
 </body>

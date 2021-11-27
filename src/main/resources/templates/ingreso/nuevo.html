@@ -64,7 +64,7 @@
 							<label>PRODUCTO:</label>
 								<select th:field="*{producto.idproducto}" class="form-control">
 									<option value="-1">Seleccione</option>
-									<option th:each="producto : ${listarProdutos}"
+									<option th:each="producto : ${listaProducto}"
 										th:value="${producto.idproducto}"
 										th:text="${producto.descripcion}" />
 								</select>

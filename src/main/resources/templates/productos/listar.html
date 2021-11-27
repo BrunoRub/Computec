@@ -1,51 +1,33 @@
 <!DOCTYPE html>
-
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
-
-<meta charset="ISO-8859-1">
-
+<meta charset="UTF-8">
 <title>Listado de Productos</title>
 <th:block th:insert="fragments/resources"></th:block>
-
 </head>
+
 <body data-ma-theme="blue">
 	<th:block th:insert="fragments/header"></th:block>
 	<th:block th:insert="fragments/menu"></th:block>
 	<section class="content">
 
 		<div class="card">
-
 			<div class="card-body">
-
 				<h4 class="card-title">Productos</h4>
-
-
-
 				<div class="form-row">
-
 					<div class="col-m-6">
-
 						<div class="form-group">
-
 							<a href="/productos/nuevo" class="btn btn-primary">Nuevo
 								Producto</a>
-
 						</div>
-
 					</div>
-
 				</div>
-
 			</div>
-
 		</div>
 
 		<div class="card">
 			<div class="card-body">
 				<h4 class="card-title">Lista de Productos</h4>
-
 				<div class="table-responsive">
 					<table id="idTableProducto" class="table table-bordered">
 						<thead>
@@ -76,13 +58,11 @@
 									</a> <a class="btn btn-danger" href="#"
 										th:onclick="'eliminarProducto(' + ${producto.idproducto} +')'"> <i
 											class="zmdi zmdi-delete zmdi-hc-fw"></i>
-
 									</a></td>
 								</tr>
 							</th:block>
 						</tbody>
 					</table>
-
 					<div class="table-responsive"></div>
 				</div>
 			</div>
@@ -93,52 +73,33 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$("#idTableProducto").DataTable();
-		});
-		
+		});		
 		
 		function eliminarProducto(id){
 			swal({
-
-                title: 'Are you sure?',
-
-                text: 'You will not be able to recover this imaginary file!',
-
+                title: '¿Estas seguro?',
+                text: 'No podrás recuperar este archivo imaginario!',
                 type: 'warning',
-
                 showCancelButton: true,
-
                 buttonsStyling: false,
-
                 confirmButtonClass: 'btn btn-danger',
-
-                confirmButtonText: 'Yes, delete it!',
-
-                cancelButtonClass: 'btn btn-secondary'
-
-            }).then(function(result){
-				
-				if(result.value){
-					
+                confirmButtonText: 'Eliminar',
+                cancelButtonClass: 'btn btn-secondary',
+                cancelButtonText: 'Cancelar',
+            }).then(function(result){				
+				if(result.value){					
 					$.ajax({
 						url: "/productos/eliminar/" + id,
 						type: "GET",
 						success: function(){
-
                 			swal("Ok", "Se ha eliminado", "success").then(function(){
-
                 				window.location = "/productos";
-
                             });
-
                 		}
 					})
-				}
-				
-				
+				}					
 			});
-		}
-		
-		
+		}	
 	</script>
 
 </body>
