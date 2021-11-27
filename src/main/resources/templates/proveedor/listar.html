@@ -89,52 +89,32 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$("#idTableProveedor").DataTable();
-		});
-		
+		});	
 		
 		function eliminarProveedor(id){
 			swal({
-
                 title: '¿Estas seguro?',
-
                 text: 'No podrás recuperar este archivo imaginario!',
-
                 type: 'warning',
-
                 showCancelButton: true,
-
                 buttonsStyling: false,
-
                 confirmButtonClass: 'btn btn-danger',
-
                 confirmButtonText: 'Eliminar',
-
                 cancelButtonClass: 'btn btn-secondary'
-
-            }).then(function(result){
-				
-				if(result.value){
-					
+            }).then(function(result){				
+				if(result.value){					
 					$.ajax({
 						url: "/proveedor/eliminar/" + id,
 						type: "GET",
 						success: function(){
-
                 			swal("Ok", "Se ha eliminado", "success").then(function(){
-
                 				window.location = "/proveedor";
-
                             });
-
                 		}
 					})
-				}
-				
-				
+				}					
 			});
-		}
-		
-		
+		}		
 	</script>
 
 </body>

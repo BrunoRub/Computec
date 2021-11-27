@@ -1,14 +1,10 @@
 package com.proyecto.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -31,8 +27,8 @@ public class Categoria {
 	@Column(name = "estado", length = 100, nullable = false)
 	private int estado;
 
-	@OneToMany(mappedBy = "categoria")
-	private List<Producto> producto = new ArrayList<Producto>();
+	//@OneToMany(mappedBy = "categoria")
+	//private List<Producto> producto = new ArrayList<Producto>();
 
 
 }

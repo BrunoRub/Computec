@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 
 <title>Listado de Categorias</title>
 <th:block th:insert="fragments/resources"></th:block>
@@ -51,8 +51,9 @@
 										th:href="@{/categoria/editar/{id}(id=${categoria.idcategoria})}"> <i
 											class="zmdi zmdi-edit zmdi-hc-fw"></i>
 									</a> <a class="btn btn-danger" href="#"
-										th:onclick="'eliminarCategoria(' + {categoria.idcategoria} +')'"> <i
+										th:onclick="'eliminarCategoria(' + ${categoria.idcategoria} +')'"> <i
 											class="zmdi zmdi-delete zmdi-hc-fw"></i>
+
 									</a></td>
 								</tr>
 							</th:block>
@@ -72,47 +73,29 @@
 		
 		function eliminarCategoria(id){
 			swal({
-
-                title: 'Are you sure?',
-
-                text: 'You will not be able to recover this imaginary file!',
-
+                title: '¿Estas seguro?',
+                text: 'No podrás recuperar este archivo imaginario!',
                 type: 'warning',
-
                 showCancelButton: true,
-
                 buttonsStyling: false,
-
                 confirmButtonClass: 'btn btn-danger',
-
-                confirmButtonText: 'Yes, delete it!',
-
-                cancelButtonClass: 'btn btn-secondary'
-
-            }).then(function(result){
-				
-				if(result.value){
-					
+                confirmButtonText: 'Eliminar',
+                cancelButtonClass: 'btn btn-secondary',
+                cancelButtonText: 'Cancelar',                
+            }).then(function(result){				
+				if(result.value){					
 					$.ajax({
 						url: "/categoria/eliminar/" + id,
 						type: "GET",
 						success: function(){
-
                 			swal("Ok", "Se ha eliminado", "success").then(function(){
-
                 				window.location = "/categoria";
-
                             });
-
                 		}
 					})
-				}
-				
-				
+				}					
 			});
-		}
-		
-		
+		}	
 	</script>
 
 </body>
