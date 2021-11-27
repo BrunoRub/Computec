@@ -30,7 +30,7 @@ public class ClienteController {
 		
 		@GetMapping("/cliente/nuevo")
 		public String clienteNuevo(Model map) {
-			map.addAttribute("venta", new Producto());
+			map.addAttribute("cliente", new Cliente());
 			return "cliente/nuevo";
 		}
 		
