@@ -6,7 +6,7 @@
 
 <meta charset="ISO-8859-1">
 
-<title>Insert title here</title>
+<title>Registra Cliente</title>
 <th:block th:insert="fragments/resources"></th:block>
 
 </head>
@@ -18,11 +18,11 @@
 
 			<div class="card-body">
 
-				<h4 class="card-title">Nuevo empleado</h4>
+				<h4 class="card-title">Nuevo Cliente</h4>
 
 
-				<form th:action="@{/trabajador/actualiza}" th:method="post"
-					th:object="${trabajador}">
+				<form th:action="@{/cliente/crear}" th:method="post"
+					th:object="${cliente}">
 					<div class="form-row">
 
 						<div class="col-md-6">
@@ -30,8 +30,7 @@
 							<div class="form-group">
 
 								<input type="text" th:field="*{nombre}" class="form-control"
-									placeholder="Nombres" maxlength="50"> <i
-									class="form-group__bar"></i>
+									placeholder="Ingrese Nombre" maxlength="50"> <i class="form-group__bar"></i>
 
 							</div>
 
@@ -41,9 +40,8 @@
 
 							<div class="form-group">
 
-								<input type="text" th:field="*{salario}" class="form-control"
-									placeholder="Sueldo" maxlength="50"> <i
-									class="form-group__bar"></i>
+								<input type="text" th:field="*{apellido}" class="form-control"
+									placeholder="Ingrese apellido" maxlength="50"> <i class="form-group__bar"></i>
 
 							</div>
 
@@ -53,10 +51,8 @@
 
 							<div class="form-group">
 
-								<input type="text" th:field="*{fechaIngreso}"
-									class="validate[required] form-control date-picker hidden-sm-down"
-									placeholder="Fecha de Ingreso" maxlength="50"> <i
-									class="form-group__bar"></i>
+								<input type="text" th:field="*{dni}" class="validate[required] form-control"
+									placeholder="Ingrese dni" maxlength="8"> <i class="form-group__bar"></i>
 
 							</div>
 
@@ -66,21 +62,25 @@
 
 							<div class="form-group">
 
-								<select th:field="*{departamento.id}" class="form-control">
+								<input type="text" th:field="*{direccion}" class="validate[required] form-control"
+									placeholder="Ingrese direccion" maxlength="100"> <i class="form-group__bar"></i>
 
-									<option value="-1">Seleccione</option>
+							</div>
 
-									<option th:each="departamento : ${listaDepartamentos}"
-										th:value="${departamento.id}"
-										th:text="${departamento.descripcion}" />
+						</div>
+						<div class="col-md-6">
 
-								</select>
+							<div class="form-group">
+
+								<input type="text" th:field="*{telefono}" class="form-control"
+									placeholder="Ingrese telefono" maxlength="9"> <i class="form-group__bar"></i>
 
 							</div>
 
 						</div>
 
 					</div>
+
 
 					<div class="form-row">
 						<div class="col-md-12">

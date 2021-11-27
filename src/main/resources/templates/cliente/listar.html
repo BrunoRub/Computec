@@ -29,8 +29,7 @@
 
 						<div class="form-group">
 
-							<a href="/trabajador/nuevo" class="btn btn-primary">Nuevo
-								empleado</a>
+							<a href="/cliente/nuevo" class="btn btn-primary">Registra Cliente</a>
 
 						</div>
 
@@ -44,34 +43,35 @@
 
 		<div class="card">
 			<div class="card-body">
-				<h4 class="card-title">Lista de empleados</h4>
+				<h4 class="card-title">Lista de Clientes</h4>
 
 				<div class="table-responsive">
 					<table id="idTableEmpleado" class="table table-bordered">
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th>Empleado</th>
-								<th>Sueldo</th>
-								<th>Fecha de Ingreso</th>
-								<th>Departamento</th>
-								<th>Opciones</th>
+								<th>Nombre</th>
+								<th>Apellido</th>
+								<th>DNI</th>
+								<th>Direccion</th>
+								<th>Telefono</th>
 							</tr>
 						</thead>
 						<tbody>
-							<th:block th:each="trabajador : ${lista}">
+							<th:block th:each="cliente : ${listaCliente}">
 								<tr>
-									<td th:text="${trabajador.id}"></td>
-									<td th:text="${trabajador.nombre}"></td>
-									<td th:text="${trabajador.salario}"></td>
-									<td th:text="${trabajador.fechaIngreso}"></td>
-									<td th:text="${empleado.departamento.descripcion}"></td>
+									<td th:text="${cliente.idcli}"></td>
+									<td th:text="${cliente.nombre}"></td>
+									<td th:text="${cliente.apellido}"></td>
+									<td th:text="${cliente.dni}"></td>
+									<td th:text="${cliente.direccion}"></td>
+									<td th:text="${cliente.telefono}"></td>
 									<td><a class="btn btn-primary"
-										th:href="@{/empleados/editar/{id}(id=${empleado.id})}"> <i
+										th:href="@{/cliente/editar/{id}(id=${cliente.idcli})}"> <i
 											class="zmdi zmdi-edit zmdi-hc-fw"></i>
 
 									</a> <a class="btn btn-danger" href="#"
-										th:onclick="'eliminarEmpleado(' + ${empleado.id} +')'"> <i
+										th:onclick="'eliminarCliente(' + ${cliente.idcli} +')'"> <i
 											class="zmdi zmdi-delete zmdi-hc-fw"></i>
 
 									</a></td>
@@ -93,7 +93,7 @@
 		});
 		
 		
-		function eliminarEmpleado(id){
+		function eliminarCliente(id){
 			swal({
 
                 title: 'Are you sure?',
@@ -117,13 +117,13 @@
 				if(result.value){
 					
 					$.ajax({
-						url: "/empleados/eliminar/" + id,
+						url: "/cliente/eliminar/" + id,
 						type: "GET",
 						success: function(){
 
                 			swal("Ok", "Se ha eliminado", "success").then(function(){
 
-                				window.location = "/empleados";
+                				window.location = "/clientes";
 
                             });
 

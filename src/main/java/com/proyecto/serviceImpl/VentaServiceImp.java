@@ -28,10 +28,10 @@ public class VentaServiceImp implements VentaService{
 	}
 
 	@Override
-	public Integer eliminaVenta(Long idcategoria) {
+	public Integer eliminaVenta(Long idven) {
 		
-		 repository.deleteById(idcategoria);
-		 Optional<Venta> venta=repository.findById(idcategoria);
+		 repository.deleteById(idven);
+		 Optional<Venta> venta=repository.findById(idven);
 		 if(venta.isEmpty()) {
 			 return -1;
 		 }
@@ -42,6 +42,12 @@ public class VentaServiceImp implements VentaService{
 	public Venta actualizaVenta(Venta v) {
 		
 		return repository.save(v);
+	}
+
+	@Override
+	public Optional<Venta> obtenerPorId(Long idven) {
+	
+		return repository.findById(idven);
 	}
 
 }

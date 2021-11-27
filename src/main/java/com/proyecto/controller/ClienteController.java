@@ -1,13 +1,17 @@
 package com.proyecto.controller;
 
-import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.proyecto.entity.Cliente;
+import com.proyecto.entity.Producto;
 import com.proyecto.service.ClienteService;
 
 @RestController
@@ -17,9 +21,47 @@ public class ClienteController {
 		@Autowired
 		ClienteService service;
 		
-		@GetMapping("/lista")
-		public List<Cliente> listarCliente(){
-			return service.listaClientes();
+		@GetMapping("/clientes")
+		public String listarCliente(Model map){
+			map.addAttribute("listaCliente", service.listaClientes());
+			return "cliente/listar";
+					
 		}
+		
+		@GetMapping("/cliente/nuevo")
+		public String clienteNuevo(Model map) {
+			map.addAttribute("venta", new Producto());
+			return "cliente/nuevo";
+		}
+		
+		@PostMapping("/cliente/crear")
+		public String clienteCrear(@ModelAttribute("cliente") Cliente cliente) {
+			service.registraCliente(cliente);
+			return "redirect:/clientess";
+		}
+		
+		@GetMapping("cliente/editar/{idcli}")
+		public String clienteEditar(@ModelAttribute("id") Long id, Model map) {
+			map.addAttribute("cliente", service.obtenerPorid(id));
+			return "cliente/editar";
+		}
+		
+		@PostMapping("cliente/actualizar")
+		public String clienteActualizar(@ModelAttribute("cliente") Cliente cliente) {
+			service.actualizaCliente(cliente);
+			return "redirect:/clientes";
+		}
+		
+		@GetMapping("cliente/eliminar/{id}")
+		public String clienteEliminar(@ModelAttribute("id") Long id) {
+			service.eliminarCliente(id);
+			return "redirect:/clientes";
+		}
+
+		
+		
+		
+		
+		
 		
 }

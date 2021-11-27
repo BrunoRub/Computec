@@ -4,12 +4,13 @@
 
 <head>
 
-<meta charset="ISO-8859-1">
+	<meta charset="ISO-8859-1">
 
-<title>Insert title here</title>
-<th:block th:insert="fragments/resources"></th:block>
+	<title>Editar Cliente</title>
+	<th:block th:insert="fragments/resources"></th:block>
 
 </head>
+
 <body data-ma-theme="blue">
 	<th:block th:insert="fragments/header"></th:block>
 	<th:block th:insert="fragments/menu"></th:block>
@@ -18,13 +19,12 @@
 
 			<div class="card-body">
 
-				<h4 class="card-title">Editar empleado</h4>
+				<h4 class="card-title">Editar Cliente</h4>
 
-				<form th:action="@{/empleados/crear}" th:method="post"
-					th:object="${empleado}">
-					
-					
-					<input type="hidden" th:field="*{id}"> 
+				<form th:action="@{/cliente/actualizar}" th:method="post" th:object="${cliente}">
+
+
+					<input type="hidden" th:field="*{idcli}">
 					<div class="form-row">
 
 						<div class="col-md-6">
@@ -32,8 +32,7 @@
 							<div class="form-group">
 
 								<input type="text" th:field="*{nombre}" class="form-control"
-									placeholder="Nombres" maxlength="50"> <i
-									class="form-group__bar"></i>
+									placeholder="Ingrese Nombre" maxlength="50"> <i class="form-group__bar"></i>
 
 							</div>
 
@@ -43,9 +42,8 @@
 
 							<div class="form-group">
 
-								<input type="text" th:field="*{salario}" class="form-control"
-									placeholder="Sueldo" maxlength="50"> <i
-									class="form-group__bar"></i>
+								<input type="text" th:field="*{apellido}" class="form-control"
+									placeholder="Ingrese apellido" maxlength="50"> <i class="form-group__bar"></i>
 
 							</div>
 
@@ -55,28 +53,30 @@
 
 							<div class="form-group">
 
-								<input type="text" th:field="*{fechaIngreso}"
-									class="validate[required] form-control date-picker hidden-sm-down"
-									placeholder="Fecha de Ingreso" maxlength="50"> <i
-									class="form-group__bar"></i>
+								<input type="text" th:field="*{dni}" class="validate[required] form-control"
+									placeholder="Ingrese dni" maxlength="8"> <i class="form-group__bar"></i>
 
 							</div>
 
 						</div>
 
+						
 						<div class="col-md-6">
 
 							<div class="form-group">
 
-								<select th:field="*{departamento.id}" class="form-control">
+								<input type="text" th:field="*{direccion}" class="validate[required] form-control"
+									placeholder="Ingrese direccion" maxlength="100"> <i class="form-group__bar"></i>
 
-									<option value="-1">Seleccione</option>
+							</div>
 
-									<option th:each="departamento : ${listaDepartamentos}"
-										th:value="${departamento.id}"
-										th:text="${departamento.descripcion}" />
+						</div>
+						<div class="col-md-6">
 
-								</select>
+							<div class="form-group">
+
+								<input type="text" th:field="*{telefono}" class="form-control"
+									placeholder="Ingrese telefono" maxlength="9"> <i class="form-group__bar"></i>
 
 							</div>
 
@@ -88,7 +88,7 @@
 						<div class="col-md-12">
 							<div class="form-group">
 								<button type="submit" class="btn btn-primary">Actualizar</button>
-								<a href="/empleados" class="btn btn-danger">Cancelar</a>
+								<a href="/clientes" class="btn btn-danger">Cancelar</a>
 							</div>
 						</div>
 					</div>
@@ -102,4 +102,5 @@
 	</section>
 
 </body>
+
 </html>

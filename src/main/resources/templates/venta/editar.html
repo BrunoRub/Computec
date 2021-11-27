@@ -6,7 +6,7 @@
 
 <meta charset="ISO-8859-1">
 
-<title>Insert title here</title>
+<title>Editar Venta</title>
 <th:block th:insert="fragments/resources"></th:block>
 
 </head>
@@ -18,67 +18,112 @@
 
 			<div class="card-body">
 
-				<h4 class="card-title">Editar empleado</h4>
+				<h4 class="card-title">Editar Venta</h4>
 
-				<form th:action="@{/empleados/crear}" th:method="post"
-					th:object="${empleado}">
+				<form th:action="@{/venta/actualizar}" th:method="post"
+					th:object="${venta}">
 					
 					
-					<input type="hidden" th:field="*{id}"> 
+					<input type="hidden" th:field="*{idven}"> 
 					<div class="form-row">
 
 						<div class="col-md-6">
 
 							<div class="form-group">
 
-								<input type="text" th:field="*{nombre}" class="form-control"
-									placeholder="Nombres" maxlength="50"> <i
-									class="form-group__bar"></i>
-
-							</div>
-
-						</div>
-
-						<div class="col-md-6">
-
-							<div class="form-group">
-
-								<input type="text" th:field="*{salario}" class="form-control"
-									placeholder="Sueldo" maxlength="50"> <i
-									class="form-group__bar"></i>
-
-							</div>
-
-						</div>
-
-						<div class="col-md-6">
-
-							<div class="form-group">
-
-								<input type="text" th:field="*{fechaIngreso}"
-									class="validate[required] form-control date-picker hidden-sm-down"
-									placeholder="Fecha de Ingreso" maxlength="50"> <i
-									class="form-group__bar"></i>
-
-							</div>
-
-						</div>
-
-						<div class="col-md-6">
-
-							<div class="form-group">
-
-								<select th:field="*{departamento.id}" class="form-control">
+								<label for="inputCliente">Cliente :</label>
+								<select th:field="*{cliente.idcli}" class="form-control">
 
 									<option value="-1">Seleccione</option>
 
-									<option th:each="departamento : ${listaDepartamentos}"
-										th:value="${departamento.id}"
-										th:text="${departamento.descripcion}" />
+									<option th:each="cliente : ${listaCliente}" th:value="${cliente.idcli}"
+										th:text="${cliente.nombre}" />
 
 								</select>
 
 							</div>
+
+						</div>
+
+						<div class="col-md-6">
+
+							<div class="form-group">
+
+								<label for="inputTrabajador">Trabajador :</label>
+								<select th:field="*{trabajador.idtra}" class="form-control">
+
+									<option value="-1">Seleccione</option>
+
+									<option th:each="trabajador: ${listaTrabajador}" th:value="${trabajador.idtra}"
+										th:text="${trabajador.nombre}" />
+
+								</select>
+
+							</div>
+
+						</div>
+
+						<div class="col-md-6">
+
+							<div class="form-group">
+								<label for="inputFecha">Fecha Venta:</label>
+
+								<input type="text" th:field="*{fecha}"
+									class="validate[required] form-control date-picker hidden-sm-down"
+									placeholder="Fecha de Venta" maxlength="50"> <i class="form-group__bar"></i>
+
+							</div>
+
+						</div>
+
+						<div class="col-md-6">
+
+							<div class="form-group">
+
+								<input type="text" th:field="*{tipocom}" class="form-control"
+									placeholder="Ingrese tipo Comprobante" maxlength="50"> <i
+									class="form-group__bar"></i>
+
+							</div>
+
+						</div>
+
+						<div class="col-md-6">
+
+							<div class="form-group">
+
+								<label for="inputTrabajador">Trabajador :</label>
+								<select th:field="*{trabajador.idtra}" class="form-control">
+
+									<option value="-1">Seleccione</option>
+
+									<option th:each="producto: ${listaProducto}" th:value="${producto.idproducto}"
+										th:text="${producto.descripcion}" />
+
+								</select>
+
+
+							</div>
+
+						</div>
+
+					</div>
+					<div class="col-md-6">
+
+						<div class="form-group">
+							<label for="inputCantidad">Cantidad :</label>
+							<input type="text" th:field="*{cantidad}" class="form-control"
+								placeholder="Ingrese cantidad" maxlength="50"> <i class="form-group__bar"></i>
+
+						</div>
+
+					</div>
+					<div class="col-md-6">
+
+						<div class="form-group">
+							<label for="inputPrecio">Precio Venta :</label>
+							<input type="text" th:field="*{preciov}" class="form-control" placeholder="0.0"
+								maxlength="50"> <i class="form-group__bar"></i>
 
 						</div>
 
