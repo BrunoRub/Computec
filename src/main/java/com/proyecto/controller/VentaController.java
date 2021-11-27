@@ -1,20 +1,13 @@
 package com.proyecto.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import com.proyecto.entity.Producto;
-import com.proyecto.entity.Trabajador;
+import org.springframework.web.bind.annotation.PostMapping;
 import com.proyecto.entity.Venta;
 import com.proyecto.service.ClienteService;
 import com.proyecto.service.ProductoService;
@@ -56,7 +49,7 @@ public class VentaController {
 	@PostMapping("/venta/crear")
 	public String ventaCrear(@ModelAttribute("venta") Venta venta) {
 		ventaService.registraVenta(venta);
-		return "redirect:/ventas";
+		return "redirect:/venta";
 	}
 	
 	@GetMapping("venta/editar/{idven}")
@@ -71,13 +64,13 @@ public class VentaController {
 	@PostMapping("venta/actualizar")
 	public String ventaActualizar(@ModelAttribute("venta") Venta venta) {
 		ventaService.actualizaVenta(venta);
-		return "redirect:/ventas";
+		return "redirect:/venta";
 	}
 	
 	@GetMapping("venta/eliminar/{id}")
 	public String productoEliminar(@ModelAttribute("id") Long id) {
 		productoService.eliminar(id);
-		return "redirect:/ventas";
+		return "redirect:/venta";
 	}
 	
 	
