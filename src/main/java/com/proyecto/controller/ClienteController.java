@@ -34,7 +34,7 @@ public class ClienteController {
 		@PostMapping("/cliente/crear")
 		public String clienteCrear(@ModelAttribute("cliente") Cliente cliente) {
 			service.registraCliente(cliente);
-			return "redirect:/clientes";
+			return "redirect:/cliente";
 		}
 		
 		@GetMapping("cliente/editar/{idcli}")
@@ -46,13 +46,13 @@ public class ClienteController {
 		@PostMapping("cliente/actualizar")
 		public String clienteActualizar(@ModelAttribute("cliente") Cliente cliente) {
 			service.actualizaCliente(cliente);
-			return "redirect:/clientes";
+			return "redirect:/cliente";
 		}
 		
 		@GetMapping("cliente/eliminar/{id}")
 		public String clienteEliminar(@ModelAttribute("id") Long id) {
 			service.eliminarCliente(id);
-			return "redirect:/clientes";
+			return "redirect:/cliente";
 		}
 
 		
