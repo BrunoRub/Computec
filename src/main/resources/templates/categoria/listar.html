@@ -16,70 +16,48 @@
 	<section class="content">
 
 		<div class="card">
-
 			<div class="card-body">
-
 				<h4 class="card-title">Categorias</h4>
-
-
-
 				<div class="form-row">
-
 					<div class="col-m-6">
-
 						<div class="form-group">
-
-							<a href="/trabajador/nuevo" class="btn btn-primary">Nuevo
-								empleado</a>
-
+							<a href="/categoria/nuevo" class="btn btn-primary">Nueva
+								Categoria</a>
 						</div>
-
 					</div>
-
 				</div>
-
 			</div>
-
 		</div>
 
 		<div class="card">
 			<div class="card-body">
-				<h4 class="card-title">Lista de empleados</h4>
-
+				<h4 class="card-title">Lista de Categorias</h4>
 				<div class="table-responsive">
 					<table id="idTableEmpleado" class="table table-bordered">
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th>Empleado</th>
-								<th>Sueldo</th>
-								<th>Fecha de Ingreso</th>
-								<th>Departamento</th>
-								<th>Opciones</th>
+								<th>DESCRIPCION</th>
+								<th>ESTADO</th>
 							</tr>
 						</thead>
 						<tbody>
-							<th:block th:each="trabajador : ${lista}">
+							<th:block th:each="categoria : ${listarCategoria}">
 								<tr>
-									<td th:text="${trabajador.id}"></td>
-									<td th:text="${trabajador.nombre}"></td>
-									<td th:text="${trabajador.salario}"></td>
-									<td th:text="${trabajador.fechaIngreso}"></td>
-									<td th:text="${empleado.departamento.descripcion}"></td>
+									<td th:text="${categoria.idcategoria}"></td>
+									<td th:text="${categoria.descripcion}"></td>
+									<td th:text="${categoria.estado}"></td>
 									<td><a class="btn btn-primary"
-										th:href="@{/empleados/editar/{id}(id=${empleado.id})}"> <i
+										th:href="@{/categoria/editar/{id}(id=${categoria.idcategoria})}"> <i
 											class="zmdi zmdi-edit zmdi-hc-fw"></i>
-
 									</a> <a class="btn btn-danger" href="#"
-										th:onclick="'eliminarEmpleado(' + ${empleado.id} +')'"> <i
+										th:onclick="'eliminarCategoria(' + {categoria.idcategoria} +')'"> <i
 											class="zmdi zmdi-delete zmdi-hc-fw"></i>
-
 									</a></td>
 								</tr>
 							</th:block>
 						</tbody>
 					</table>
-
 					<div class="table-responsive"></div>
 				</div>
 			</div>
@@ -90,10 +68,9 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$("#idTableEmpleado").DataTable();
-		});
+		});		
 		
-		
-		function eliminarEmpleado(id){
+		function eliminarCategoria(id){
 			swal({
 
                 title: 'Are you sure?',
@@ -117,13 +94,13 @@
 				if(result.value){
 					
 					$.ajax({
-						url: "/empleados/eliminar/" + id,
+						url: "/categoria/eliminar/" + id,
 						type: "GET",
 						success: function(){
 
                 			swal("Ok", "Se ha eliminado", "success").then(function(){
 
-                				window.location = "/empleados";
+                				window.location = "/categoria";
 
                             });
 

@@ -1,11 +1,16 @@
 package com.proyecto.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.proyecto.entity.Categoria;
 
 public interface CategoriaService {
 	
-	List<Categoria> obtenerCategoria();
+	Categoria registrar(Categoria categoria);
+	Categoria actualizar(Categoria categoria);
+	Integer eliminar(Long idcategoria);
+	List<Categoria> listar();
+	Optional<Categoria>obtenerPorId(Long idcategoria);
 
 }
