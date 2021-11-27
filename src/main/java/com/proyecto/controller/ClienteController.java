@@ -3,19 +3,16 @@ package com.proyecto.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.proyecto.entity.Cliente;
-import com.proyecto.entity.Producto;
 import com.proyecto.service.ClienteService;
 
-@RestController
-@RequestMapping("/cliente")
+@Controller
 public class ClienteController {
 
 		@Autowired
@@ -37,7 +34,7 @@ public class ClienteController {
 		@PostMapping("/cliente/crear")
 		public String clienteCrear(@ModelAttribute("cliente") Cliente cliente) {
 			service.registraCliente(cliente);
-			return "redirect:/clientess";
+			return "redirect:/clientes";
 		}
 		
 		@GetMapping("cliente/editar/{idcli}")
