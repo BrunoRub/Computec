@@ -38,7 +38,7 @@ public class Cliente {
 	@Column(name = "telefono", nullable = false, length = 9)
 	private String telefono;
 
-	
+	/*
 	@Override
 	public String toString() {
 		return "Cliente [idcli=" + idcli + ", nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni
@@ -46,7 +46,7 @@ public class Cliente {
 	}
 
 
-	/*public String getDatos() {
+	public String getDatos() {
 		return getNombre() + " "+getApellido();
 	}*/
 }	

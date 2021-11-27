@@ -37,7 +37,7 @@ public class ClienteController {
 		@PostMapping("/cliente/crear")
 		public String clienteCrear(@ModelAttribute("cliente") Cliente cliente) {
 			service.registraCliente(cliente);
-			return "redirect:/clientes";
+			return "redirect:/clientess";
 		}
 		
 		@GetMapping("cliente/editar/{idcli}")

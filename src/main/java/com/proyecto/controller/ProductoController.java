@@ -29,7 +29,7 @@ public class ProductoController {
 	@GetMapping("/productos/nuevo")
 	public String productoNuevo(Model map) {
 		map.addAttribute("producto", new Producto());
-		map.addAttribute("listaCategoria", categoriaService.obtenerCategoria());
+		map.addAttribute("listaCategoria", categoriaService.listar());
 		return "productos/nuevo";
 	}
 	
@@ -42,7 +42,7 @@ public class ProductoController {
 	@GetMapping("productos/editar/{idproducto}")
 	public String productoEditar(@ModelAttribute("id") Long id, Model map) {
 		map.addAttribute("producto", productoService.obtenerPorId(id));
-		map.addAttribute("listaCategoria", categoriaService.obtenerCategoria());
+		map.addAttribute("listaCategoria", categoriaService.listar());
 		return "productos/editar";
 	}
 	

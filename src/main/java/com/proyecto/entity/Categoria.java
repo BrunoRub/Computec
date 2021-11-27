@@ -28,7 +28,7 @@ public class Categoria {
 	private String descripcion;
 
 	//@Column(columnDefinition = "TINTINT")
-	//@Column(name = "estado", length = 100, nullable = false)
+	@Column(name = "estado", length = 100, nullable = false)
 	private int estado;
 
 	@OneToMany(mappedBy = "categoria")
