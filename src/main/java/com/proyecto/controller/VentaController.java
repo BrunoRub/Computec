@@ -3,6 +3,7 @@ package com.proyecto.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,8 +21,7 @@ import com.proyecto.service.ProductoService;
 import com.proyecto.service.TrabajadorService;
 import com.proyecto.service.VentaService;
 
-@RestController
-@RequestMapping("/venta")
+@Controller
 public class VentaController {
 
 	@Autowired
