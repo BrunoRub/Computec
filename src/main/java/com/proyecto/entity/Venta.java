@@ -32,32 +32,32 @@ public class Venta {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idven;
 	
-	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	//@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idcli")
+	//@JoinColumn(name = "idcli")
 	private Cliente cliente;
 	
-	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	//@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idtra")
+	//@JoinColumn(name = "idtra")
 	private Trabajador trabajador;
 
-	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	//@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Producto producto;
 	
-	@Column(name = "cantidad", nullable = false, length = 10)
+	//@Column(name = "cantidad", nullable = false, length = 10)
 	private int cantidad;
 	
-	@Column(name = "preciov", nullable = false, length = 10)
+	//@Column(name = "preciov", nullable = false, length = 10)
 	private double preciov;
 	
-	@JsonFormat(pattern = "yyyy-MM-dd")
-    @Temporal(TemporalType.DATE)
+	//@JsonFormat(pattern = "yyyy-MM-dd")
+    //@Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fecha;
 	
-	@Column(name = "tipocom", nullable = false, length = 20)
+	//@Column(name = "tipocom", nullable = false, length = 20)
 	private String tipocom;
 	
 	

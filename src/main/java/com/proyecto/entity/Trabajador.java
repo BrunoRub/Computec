@@ -22,19 +22,19 @@ public class Trabajador{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idtra;
 	
-	@Column(name = "nombre", nullable = false, length = 45)
+	//@Column(name = "nombre", nullable = false, length = 45)
 	private String nombre;
 	
-	@Column(name = "apellido", nullable = false, length = 45)
+	//@Column(name = "apellido", nullable = false, length = 45)
 	private String apellido;
 	
-	@Column(name = "dni", nullable = false, length = 8)
+	//@Column(name = "dni", nullable = false, length = 8)
 	private String dni;
 	
-	@Column(name = "direccion", nullable = false, length = 100)
+	//@Column(name = "direccion", nullable = false, length = 100)
 	private String direccion;
 	
-	@Column(name = "telefono", nullable = false, length = 9)
+	//@Column(name = "telefono", nullable = false, length = 9)
 	private String telefono;
 	
 	//@Column(name = "username", nullable = false, length = 45)

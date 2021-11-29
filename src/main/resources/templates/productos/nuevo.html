@@ -59,11 +59,11 @@
 
 							<div class="form-group">
 								<label for="inputCategoria">CATEGORIA :</label>
-								<select th:field="*{categoria.idcategoria}" class="form-control">
+								<select th:field="*{categoria.idcat}" class="form-control">
 
 									<option value="-1">Seleccione</option>
 
-									<option th:each="categoria : ${listaCategoria}" th:value="${categoria.idcategoria}"
+									<option th:each="categoria : ${listaCategoria}" th:value="${categoria.idcat}"
 										th:text="${categoria.descripcion}" />
 
 								</select>

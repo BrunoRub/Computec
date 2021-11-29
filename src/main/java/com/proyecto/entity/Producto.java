@@ -26,19 +26,19 @@ public class Producto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idpro;
 
-	@Column(name = "descripcion", nullable = false, length = 50)
+	//@Column(name = "descripcion", nullable = false, length = 50)
 	private String descripcion;
 
-	@Column(name = "precio", precision = 10, scale = 2)
+	//@Column(name = "precio", precision = 10, scale = 2)
 	private BigDecimal precio;
 
-	@Column(name = "stock", nullable = false, length = 10)
+	//@Column(name = "stock", nullable = false, length = 10)
 	private int stock;
 
-	@Column(columnDefinition = "TINYINT")
+	//@Column(columnDefinition = "TINYINT")
 	private int estado;
 
-	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	//@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Categoria categoria;
 

@@ -20,11 +20,11 @@ public class Categoria {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idcat;
 
-	@Column(name = "descripcion", length = 100, nullable = false)
+	//@Column(name = "descripcion", length = 100, nullable = false)
 	private String descripcion;
 
 	//@Column(columnDefinition = "TINTINT")
-	@Column(name = "estado", length = 100, nullable = false)
+	//@Column(name = "estado", length = 100, nullable = false)
 	private int estado;
 
 	//@OneToMany(mappedBy = "categoria")

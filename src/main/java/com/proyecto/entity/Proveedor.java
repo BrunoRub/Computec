@@ -20,16 +20,16 @@ public class Proveedor {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idprov;
 	
-	@Column(name = "razons", nullable = false, length = 45)
+	//@Column(name = "razons", nullable = false, length = 45)
 	private String razons;
 	
-	@Column(name = "ruc", nullable = false, length = 11)
+	//@Column(name = "ruc", nullable = false, length = 11)
 	private String ruc;
 	
-	@Column(name = "direccion", nullable = false, length = 100)
+	//@Column(name = "direccion", nullable = false, length = 100)
 	private String direccion;
 	
-	@Column(name = "telefono", nullable = false, length = 9)
+	//@Column(name = "telefono", nullable = false, length = 9)
 	private String telefono;
 
 	/*
