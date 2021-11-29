@@ -12,4 +12,5 @@ public interface VentaService {
 	public Integer eliminaVenta(Long idven);
 	public Venta actualizaVenta(Venta v);
 	Optional<Venta> obtenerPorId(Long idven);
+	
 }

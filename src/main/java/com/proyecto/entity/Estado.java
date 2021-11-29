@@ -10,23 +10,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "trabajador")
+@Table(name = "estado")
 @Getter
 @Setter
-public class Trabajador{
-
+public class Estado {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idtra;
+	private int idestado;
 	
-	private String nombre;
-	
-	private String apellido;
-	
-	private String dni;
-	
-	private String direccion;
-	
-	private String telefono;
-	
+	private String descripcion;
+
 }

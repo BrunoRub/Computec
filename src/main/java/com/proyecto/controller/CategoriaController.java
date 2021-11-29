@@ -9,12 +9,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.proyecto.entity.Categoria;
 import com.proyecto.service.CategoriaService;
+import com.proyecto.service.EstadoService;
 
 @Controller
 public class CategoriaController {
 
 	@Autowired
 	private CategoriaService service;
+	
+	@Autowired
+	private EstadoService eservice;
 	
 	@GetMapping("/categoria")
 	public String listar(Model map) {
@@ -25,6 +29,7 @@ public class CategoriaController {
 	@GetMapping("/categoria/nuevo")
 	public String nuevo(Model map){
 		map.addAttribute("categoria", new Categoria());
+		map.addAttribute("listarEstado",eservice.listar());
 		return "categoria/nuevo";
 	}
 	
@@ -37,6 +42,7 @@ public class CategoriaController {
 	@GetMapping("/categoria/editar/{idcat}")
 	public String editar(@ModelAttribute("idcat") Long idcat,Model map){
 		map.addAttribute("categoria", service.obtenerPorId(idcat));
+		map.addAttribute("listarEstado",eservice.listar());
 		return "categoria/editar";
 	}
 	

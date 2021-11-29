@@ -11,8 +11,8 @@ import com.proyecto.repository.CategoriaRepository;
 import com.proyecto.service.CategoriaService;
 
 @Service
-public class CategoriaServiceImp implements CategoriaService{
-	
+public class CategoriaServiceImp implements CategoriaService {
+
 	@Autowired
 	private CategoriaRepository repository;
 
@@ -29,7 +29,7 @@ public class CategoriaServiceImp implements CategoriaService{
 	@Override
 	public Integer eliminar(Long idcat) {
 		repository.deleteById(idcat);
-		Optional<Categoria>cat = repository.findById(idcat);
+		Optional<Categoria> cat = repository.findById(idcat);
 		if (cat.isPresent()) {
 			return -1;
 		}
@@ -45,7 +45,5 @@ public class CategoriaServiceImp implements CategoriaService{
 	public Optional<Categoria> obtenerPorId(Long idcat) {
 		return repository.findById(idcat);
 	}
-
-	
 
 }

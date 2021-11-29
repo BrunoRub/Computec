@@ -16,7 +16,6 @@
 			<div class="card-body">
 				<h4 class="card-title">Nueva Categoria</h4>
 
-
 				<form th:action="@{/categoria/crear}" th:method="post"
 					th:object="${categoria}">
 					<div class="form-row">
@@ -28,13 +27,16 @@
 									placeholder="Descripcion" maxlength="45"> <i
 									class="form-group__bar"></i>
 							</div>
-						</div>
-
+						</div>						
+						
 						<div class="col-md-6">
 							<div class="form-group">
-								<label for="inputDescrip">ESTADO:</label> <input type="text"
-									th:field="*{estado}" class="form-control" placeholder="Estado"
-									maxlength="45"> <i class="form-group__bar"></i>
+								<label for="inputEstado">ESTADO :</label>
+								<select th:field="*{estado.idestado}" class="form-control">
+									<option value="-1">Seleccione</option>
+									<option th:each="estado : ${listarEstado}" th:value="${estado.idestado}"
+										th:text="${estado.descripcion}" />
+								</select>
 							</div>
 						</div>
 

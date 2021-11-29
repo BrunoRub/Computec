@@ -12,4 +12,5 @@ public interface ProductoService {
 	Integer eliminar(Long id);	
 	Optional<Producto> obtenerPorId(Long idpro);
 	List<Producto> obtenerProducto();
+	
 }

@@ -12,23 +12,13 @@ import com.proyecto.repository.TrabajadorRepository;
 import com.proyecto.service.TrabajadorService;
 
 @Service
-public class TrabajadorServiceImp implements TrabajadorService{
+public class TrabajadorServiceImp implements TrabajadorService {
 
 	@Autowired
 	TrabajadorRepository repository;
-	
-	/*@Autowired
-	private BCryptPasswordEncoder encoder;
-	
-	@Override
-	public Trabajador iniciarSesion(String usuario, String clave) {
-		return repository.iniciarSesion(usuario, clave);
-	}
-*/
-	
+
 	@Override
 	public Trabajador registrar(Trabajador trabajador) {
-		//trabajador.setClave(encoder.encode(trabajador.getClave()));
 		return repository.save(trabajador);
 	}
 
@@ -45,7 +35,7 @@ public class TrabajadorServiceImp implements TrabajadorService{
 	@Override
 	public Integer eliminar(Long idtra) {
 		repository.deleteById(idtra);
-		Optional<Trabajador>tra = repository.findById(idtra);
+		Optional<Trabajador> tra = repository.findById(idtra);
 		if (tra.isPresent()) {
 			return -1;
 		}
@@ -56,13 +46,5 @@ public class TrabajadorServiceImp implements TrabajadorService{
 	public Optional<Trabajador> obtenerPorId(Long idtra) {
 		return repository.findById(idtra);
 	}
-
-	/*
-	@Override
-	public Trabajador findByUsername(String username) {
-		return repository.findByUsername(username);
-	}
-	*/
-	
 
 }

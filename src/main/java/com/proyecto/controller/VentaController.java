@@ -28,9 +28,7 @@ public class VentaController {
 	
 	@Autowired
 	ClienteService clienteService;
-	
-	
-	
+		
 	@GetMapping("/venta")
 	public String listaVenta(Model map){
 		map.addAttribute("listaVenta", ventaService.listaVentas());
@@ -71,8 +69,6 @@ public class VentaController {
 	public String productoEliminar(@ModelAttribute("ididven") Long idven) {
 		productoService.eliminar(idven);
 		return "redirect:/venta";
-	}
-	
-	
+	}	
 	
 }

@@ -11,42 +11,38 @@ import com.proyecto.repository.VentaRepository;
 import com.proyecto.service.VentaService;
 
 @Service
-public class VentaServiceImp implements VentaService{
-	
+public class VentaServiceImp implements VentaService {
+
 	@Autowired
 	VentaRepository repository;
 
 	@Override
-	public List<Venta> listaVentas() {		
+	public List<Venta> listaVentas() {
 		return (List<Venta>) repository.findAll();
 	}
 
 	@Override
 	public Venta registraVenta(Venta v) {
-		
 		return repository.save(v);
 	}
 
 	@Override
 	public Integer eliminaVenta(Long idven) {
-		
-		 repository.deleteById(idven);
-		 Optional<Venta> venta=repository.findById(idven);
-		 if(venta.isEmpty()) {
-			 return -1;
-		 }
+		repository.deleteById(idven);
+		Optional<Venta> venta = repository.findById(idven);
+		if (venta.isEmpty()) {
+			return -1;
+		}
 		return 1;
 	}
 
 	@Override
 	public Venta actualizaVenta(Venta v) {
-		
 		return repository.save(v);
 	}
 
 	@Override
 	public Optional<Venta> obtenerPorId(Long idven) {
-	
 		return repository.findById(idven);
 	}
 

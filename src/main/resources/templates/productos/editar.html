@@ -61,14 +61,14 @@
 						</div>				
 						
 						<div class="col-md-6">
-
 							<div class="form-group">
-							<label for="inputEstado">ESTADO :</label>
-								<input type="text" th:field="*{estado}" class="form-control"
-									placeholder="Estado" maxlength="1"> <i
-									class="form-group__bar"></i>
+								<label for="inputEstado">ESTADO :</label>
+								<select th:field="*{estado.idestado}" class="form-control">
+									<option value="-1">Seleccione</option>
+									<option th:each="estado : ${listarEstado}" th:value="${estado.idestado}"
+										th:text="${estado.descripcion}" />
+								</select>
 							</div>
-
 						</div>
 
 						<div class="col-md-6">

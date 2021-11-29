@@ -11,7 +11,7 @@ import com.proyecto.repository.IngresoRepository;
 import com.proyecto.service.IngresoService;
 
 @Service
-public class IngresoServiceImp implements IngresoService{
+public class IngresoServiceImp implements IngresoService {
 
 	@Autowired
 	IngresoRepository repository;
@@ -29,7 +29,7 @@ public class IngresoServiceImp implements IngresoService{
 	@Override
 	public Integer eliminar(Long iding) {
 		repository.deleteById(iding);
-		Optional<Ingreso>ing = repository.findById(iding);
+		Optional<Ingreso> ing = repository.findById(iding);
 		if (ing.isPresent()) {
 			return -1;
 		}
@@ -45,7 +45,5 @@ public class IngresoServiceImp implements IngresoService{
 	public Optional<Ingreso> obtenerPorId(Long iding) {
 		return repository.findById(iding);
 	}
-	
-	
 
 }

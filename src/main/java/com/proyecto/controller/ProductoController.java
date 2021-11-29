@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.proyecto.entity.Producto;
 import com.proyecto.service.CategoriaService;
+import com.proyecto.service.EstadoService;
 import com.proyecto.service.ProductoService;
 
 @Controller
@@ -20,6 +21,9 @@ public class ProductoController {
 	@Autowired
 	private CategoriaService categoriaService;
 	
+	@Autowired
+	private EstadoService eservice;
+	
 	@GetMapping("/productos")
 	public String listProductos(Model map) {
 		map.addAttribute("listarProductos", productoService.obtenerProducto());
@@ -30,6 +34,7 @@ public class ProductoController {
 	public String productoNuevo(Model map) {
 		map.addAttribute("producto", new Producto());
 		map.addAttribute("listaCategoria", categoriaService.listar());
+		map.addAttribute("listarEstado",eservice.listar());
 		return "productos/nuevo";
 	}
 	
@@ -43,6 +48,7 @@ public class ProductoController {
 	public String productoEditar(@ModelAttribute("id") Long id, Model map) {
 		map.addAttribute("producto", productoService.obtenerPorId(id));
 		map.addAttribute("listaCategoria", categoriaService.listar());
+		map.addAttribute("listarEstado",eservice.listar());
 		return "productos/editar";
 	}
 	

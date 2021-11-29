@@ -12,4 +12,5 @@ public interface IngresoService {
 	public Integer eliminar(Long iding);
 	public List<Ingreso>listar();
 	Optional<Ingreso>obtenerPorId(Long iding);
+	
 }

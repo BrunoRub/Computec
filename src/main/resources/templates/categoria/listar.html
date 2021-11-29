@@ -20,7 +20,7 @@
 							<a href="/categoria/nuevo" class="btn btn-primary">Nueva
 								Categoria</a>
 						</div>
-					</div>
+					</div>					
 				</div>
 			</div>
 		</div>
@@ -42,13 +42,13 @@
 								<tr>
 									<td th:text="${categoria.idcat}"></td>
 									<td th:text="${categoria.descripcion}"></td>
-									<td th:text="${categoria.estado}"></td>
+									<td th:text="${categoria.estado.descripcion}"></td>
 									<td><a class="btn btn-primary"
-										th:href="@{/categoria/editar/{id}(id=${categoria.idcat})}"> <i
-											class="zmdi zmdi-edit zmdi-hc-fw"></i>
+										th:href="@{/categoria/editar/{id}(id=${categoria.idcat})}">
+											<i class="zmdi zmdi-edit zmdi-hc-fw"></i>
 									</a> <a class="btn btn-danger" href="#"
-										th:onclick="'eliminarCategoria(' + ${categoria.idcat} +')'"> <i
-											class="zmdi zmdi-delete zmdi-hc-fw"></i>
+										th:onclick="'eliminarCategoria(' + ${categoria.idcat} +')'">
+											<i class="zmdi zmdi-delete zmdi-hc-fw"></i>
 									</a></td>
 								</tr>
 							</th:block>
@@ -59,37 +59,39 @@
 			</div>
 		</div>
 	</section>
-	
+
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$("#idTableCategoria").DataTable();
-		});		
-		
-		function eliminarCategoria(id){
+		});
+
+		function eliminarCategoria(id) {
 			swal({
-                title: '¿Estas seguro?',
-                text: 'No podrás recuperar este archivo imaginario!',
-                type: 'warning',
-                showCancelButton: true,
-                buttonsStyling: false,
-                confirmButtonClass: 'btn btn-danger',
-                confirmButtonText: 'Eliminar',
-                cancelButtonClass: 'btn btn-secondary',
-                cancelButtonText: 'Cancelar',
-            }).then(function(result){				
-				if(result.value){					
-					$.ajax({
-						url: "/categoria/eliminar/" + id,
-						type: "GET",
-						success: function(){
-                			swal("Ok", "Se ha eliminado", "success").then(function(){
-                				window.location = "/categoria";
-                            });
-                		}
-					})
-				}					
-			});
-		}	
+				title : '¿Estas seguro?',
+				text : 'No podrás recuperar este archivo imaginario!',
+				type : 'warning',
+				showCancelButton : true,
+				buttonsStyling : false,
+				confirmButtonClass : 'btn btn-danger',
+				confirmButtonText : 'Eliminar',
+				cancelButtonClass : 'btn btn-secondary',
+				cancelButtonText : 'Cancelar',
+			}).then(
+					function(result) {
+						if (result.value) {
+							$.ajax({
+								url : "/categoria/eliminar/" + id,
+								type : "GET",
+								success : function() {
+									swal("Ok", "Se ha eliminado", "success")
+											.then(function() {
+												window.location = "/categoria";
+											});
+								}
+							})
+						}
+					});
+		}
 	</script>
 
 </body>

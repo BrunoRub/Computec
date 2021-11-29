@@ -11,7 +11,7 @@ import com.proyecto.repository.ProveedorRepository;
 import com.proyecto.service.ProveedorService;
 
 @Service
-public class ProveedorServiceImp implements ProveedorService{
+public class ProveedorServiceImp implements ProveedorService {
 
 	@Autowired
 	ProveedorRepository repository;
@@ -29,7 +29,7 @@ public class ProveedorServiceImp implements ProveedorService{
 	@Override
 	public Integer eliminar(Long idprov) {
 		repository.deleteById(idprov);
-		Optional<Proveedor>pro = repository.findById(idprov);
+		Optional<Proveedor> pro = repository.findById(idprov);
 		if (pro.isPresent()) {
 			return -1;
 		}
@@ -45,7 +45,5 @@ public class ProveedorServiceImp implements ProveedorService{
 	public Optional<Proveedor> obtenerPorId(Long idprov) {
 		return repository.findById(idprov);
 	}
-	
-	
 
 }

@@ -12,4 +12,5 @@ public interface ProveedorService {
 	public Integer eliminar(Long idprov);
 	public List<Proveedor>listar();
 	Optional<Proveedor>obtenerPorId(Long idprov);
+	
 }
