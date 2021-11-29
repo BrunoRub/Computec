@@ -34,9 +34,9 @@ public class CategoriaController {
 		return "redirect:/categoria";
 	}
 	
-	@GetMapping("/categoria/editar/{idcategoria}")
-	public String editar(@ModelAttribute("idcategoria") Long idcategoria,Model map){
-		map.addAttribute("categoria", service.obtenerPorId(idcategoria));
+	@GetMapping("/categoria/editar/{idcat}")
+	public String editar(@ModelAttribute("idcat") Long idcat,Model map){
+		map.addAttribute("categoria", service.obtenerPorId(idcat));
 		return "categoria/editar";
 	}
 	
@@ -46,9 +46,9 @@ public class CategoriaController {
 		return "redirect:/categoria";
 	}
 	
-	@GetMapping("/categoria/eliminar/{idcategoria}")
-	public String eliminar(@ModelAttribute("idcategoria") Long idcategoria){
-		service.eliminar(idcategoria);
+	@GetMapping("/categoria/eliminar/{idcat}")
+	public String eliminar(@ModelAttribute("idcat") Long idcat){
+		service.eliminar(idcat);
 		return "redirect:/categoria";
 	}
 }

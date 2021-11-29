@@ -38,8 +38,6 @@
 								<th>Dni</th>
 								<th>Dirección</th>
 								<th>Telefono</th>
-								<th>Usuario</th>
-								<th>Contraseña</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -50,9 +48,7 @@
 									<td th:text="${trabajador.apellido}"></td>
 									<td th:text="${trabajador.dni}"></td>
 									<td th:text="${trabajador.direccion}"></td>
-									<td th:text="${trabajador.telefono}"></td>
-									<td th:text="${trabajador.username}"></td>
-									<td th:text="${trabajador.clave}"></td>                                         
+									<td th:text="${trabajador.telefono}"></td>                                    
 									<td><a class="btn btn-primary"
 										th:href="@{/trabajador/editar/{id}(id=${trabajador.idtra})}"> <i
 											class="zmdi zmdi-edit zmdi-hc-fw"></i>

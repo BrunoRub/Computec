@@ -24,7 +24,7 @@
 					th:object="${producto}">
 					
 					
-					<input type="hidden" th:field="*{idproducto}"> 
+					<input type="hidden" th:field="*{idpro}"> 
 					<div class="form-row">
 
 						<div class="col-md-6">
@@ -58,20 +58,7 @@
 									class="form-group__bar"></i>
 							</div>
 
-						</div>
-						
-
-						<div class="col-md-6">
-
-							<div class="form-group">
-							<label for="inputFven">FECHA VENCIMIENTO :</label>
-								<input type="text" th:field="*{fecvencimiento}"
-									class="validate[required] form-control date-picker hidden-sm-down"
-									placeholder="Fecha de Vencimiento" maxlength="50"> <i
-									class="form-group__bar"></i>
-							</div>
-
-						</div>
+						</div>				
 						
 						<div class="col-md-6">
 

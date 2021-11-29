@@ -9,8 +9,8 @@ public interface CategoriaService {
 	
 	Categoria registrar(Categoria categoria);
 	Categoria actualizar(Categoria categoria);
-	Integer eliminar(Long idcategoria);
+	Integer eliminar(Long idcat);
 	List<Categoria> listar();
-	Optional<Categoria>obtenerPorId(Long idcategoria);
+	Optional<Categoria>obtenerPorId(Long idcat);
 
 }

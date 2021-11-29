@@ -27,9 +27,9 @@ public class CategoriaServiceImp implements CategoriaService{
 	}
 
 	@Override
-	public Integer eliminar(Long idcategoria) {
-		repository.deleteById(idcategoria);
-		Optional<Categoria>cat = repository.findById(idcategoria);
+	public Integer eliminar(Long idcat) {
+		repository.deleteById(idcat);
+		Optional<Categoria>cat = repository.findById(idcat);
 		if (cat.isPresent()) {
 			return -1;
 		}
@@ -42,8 +42,8 @@ public class CategoriaServiceImp implements CategoriaService{
 	}
 
 	@Override
-	public Optional<Categoria> obtenerPorId(Long idcategoria) {
-		return repository.findById(idcategoria);
+	public Optional<Categoria> obtenerPorId(Long idcat) {
+		return repository.findById(idcat);
 	}
 
 	

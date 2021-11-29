@@ -64,21 +64,12 @@
 						<div class="col-md-6">
 							<div class="form-group">
 							<label>PRODUCTO:</label>
-								<select th:field="*{producto.idproducto}" class="form-control">
+								<select th:field="*{producto.idpro}" class="form-control">
 									<option value="-1">Seleccione</option>
-									<option th:each="producto : ${listarProdutos}"
-										th:value="${producto.idproducto}"
+									<option th:each="producto : ${listaProducto}"
+										th:value="${producto.idpro}"
 										th:text="${producto.descripcion}" />
 								</select>
-							</div>
-						</div>
-											
-						<div class="col-md-6">
-							<div class="form-group">
-							<label for="inputStock">PRECIO:</label>
-								<input type="text" th:field="*{precio}" class="form-control"
-									placeholder="Precio" maxlength="10"> <i
-									class="form-group__bar"></i>
 							</div>
 						</div>
 						
@@ -90,6 +81,7 @@
 									class="form-group__bar"></i>
 							</div>
 						</div>	
+
 					</div>
 
 					<div class="form-row">

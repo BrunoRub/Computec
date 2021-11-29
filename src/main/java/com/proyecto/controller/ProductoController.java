@@ -39,7 +39,7 @@ public class ProductoController {
 		return "redirect:/productos";
 	}
 	
-	@GetMapping("productos/editar/{idproducto}")
+	@GetMapping("productos/editar/{idpro}")
 	public String productoEditar(@ModelAttribute("id") Long id, Model map) {
 		map.addAttribute("producto", productoService.obtenerPorId(id));
 		map.addAttribute("listaCategoria", categoriaService.listar());

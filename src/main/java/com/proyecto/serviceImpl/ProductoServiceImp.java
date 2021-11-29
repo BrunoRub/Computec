@@ -18,21 +18,18 @@ public class ProductoServiceImp implements ProductoService{
 
 	@Override
 	public Producto registrar(Producto producto) {
-		// TODO Auto-generated method stub
 		return productoRepository.save(producto);
 	}
 
 	@Override
 	public Producto actualizar(Producto producto) {
-		// TODO Auto-generated method stub
 		return productoRepository.save(producto);
 	}
 
 	@Override
-	public Integer eliminar(Long idproducto) {
-		// TODO Auto-generated method stub
-		productoRepository.deleteById(idproducto);
-		Optional<Producto> emp = productoRepository.findById(idproducto);
+	public Integer eliminar(Long idpro) {
+		productoRepository.deleteById(idpro);
+		Optional<Producto> emp = productoRepository.findById(idpro);
 		if(emp.isPresent()) {
 			return -1;
 		}
@@ -40,14 +37,12 @@ public class ProductoServiceImp implements ProductoService{
 	}
 
 	@Override
-	public Optional<Producto> obtenerPorId(Long idproducto) {
-		// TODO Auto-generated method stub
-		return productoRepository.findById(idproducto);
+	public Optional<Producto> obtenerPorId(Long idpro) {
+		return productoRepository.findById(idpro);
 	}
 	
 	@Override
 	public List<Producto> obtenerProducto() {
-		// TODO Auto-generated method stub
 		return (List<Producto>) productoRepository.findAll();
 	}
  

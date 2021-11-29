@@ -91,11 +91,11 @@
 							<div class="form-group">
 
 								<label for="inputProducto">Producto :</label>
-								<select th:field="*{producto.idproducto}" class="form-control">
+								<select th:field="*{producto.idpro}" class="form-control">
 
 									<option value="-1">Seleccione</option>
 
-									<option th:each="producto: ${listaProducto}" th:value="${producto.idproducto}"
+									<option th:each="producto: ${listaProducto}" th:value="${producto.idpro}"
 										th:text="${producto.descripcion}" />
 
 								</select>

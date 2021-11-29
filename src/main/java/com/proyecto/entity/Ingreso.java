@@ -34,26 +34,26 @@ public class Ingreso {
 	
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idtra")
-	private Trabajador trabajador;
+	@JoinColumn(name = "idproducto")
+	private Producto producto;
 	
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idprov")
 	private Proveedor proveedor;
 	
+	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "idtra")
+	private Trabajador trabajador;	
+	
 	@JsonFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date fecha;
+	private Date fecha;	
 	
-	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idproducto")
-	private Producto producto;
-	
-	@Column(name = "precio", nullable = false, length = 10)
-	private double precio;
+	//@Column(name = "precio", nullable = false, length = 10)
+	//private double precio;
 	
 	@Column(name = "cantidad", nullable = false, length = 10)
 	private int cantidad;

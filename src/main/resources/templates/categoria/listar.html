@@ -40,14 +40,14 @@
 						<tbody>
 							<th:block th:each="categoria : ${listarCategoria}">
 								<tr>
-									<td th:text="${categoria.idcategoria}"></td>
+									<td th:text="${categoria.idcat}"></td>
 									<td th:text="${categoria.descripcion}"></td>
 									<td th:text="${categoria.estado}"></td>
 									<td><a class="btn btn-primary"
-										th:href="@{/categoria/editar/{id}(id=${categoria.idcategoria})}"> <i
+										th:href="@{/categoria/editar/{id}(id=${categoria.idcat})}"> <i
 											class="zmdi zmdi-edit zmdi-hc-fw"></i>
 									</a> <a class="btn btn-danger" href="#"
-										th:onclick="'eliminarCategoria(' + ${categoria.idcategoria} +')'"> <i
+										th:onclick="'eliminarCategoria(' + ${categoria.idcat} +')'"> <i
 											class="zmdi zmdi-delete zmdi-hc-fw"></i>
 									</a></td>
 								</tr>

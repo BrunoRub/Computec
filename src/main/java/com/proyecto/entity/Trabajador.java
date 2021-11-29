@@ -37,11 +37,11 @@ public class Trabajador{
 	@Column(name = "telefono", nullable = false, length = 9)
 	private String telefono;
 	
-	@Column(name = "username", nullable = false, length = 20)
-	private String username;
+	//@Column(name = "username", nullable = false, length = 45)
+	//private String username;
 	
-	@Column(name = "clave", nullable = false, length = 20)
-	private String clave;
+	//@Column(name = "clave", nullable = false, length = 60)
+	//private String clave;
 
 	/*
 	public Trabajador(Long idtra, String nombre, String apellido, String numdoc, String direccion, String telefono,

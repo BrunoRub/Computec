@@ -41,14 +41,6 @@ public class Venta {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idtra")
 	private Trabajador trabajador;
-	
-	@JsonFormat(pattern = "yyyy-MM-dd")
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date fecha;
-	
-	@Column(name = "tipocom", nullable = false, length = 20)
-	private String tipocom;
 
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -59,5 +51,14 @@ public class Venta {
 	
 	@Column(name = "preciov", nullable = false, length = 10)
 	private double preciov;
+	
+	@JsonFormat(pattern = "yyyy-MM-dd")
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date fecha;
+	
+	@Column(name = "tipocom", nullable = false, length = 20)
+	private String tipocom;
+	
 	
 }

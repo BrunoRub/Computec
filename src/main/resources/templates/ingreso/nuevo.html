@@ -20,7 +20,6 @@
 
 				<h4 class="card-title">Nuevo Ingreso</h4>
 
-
 				<form th:action="@{/ingreso/crear}" th:method="post"
 					th:object="${ingreso}">
 					<div class="form-row">
@@ -62,21 +61,12 @@
 						<div class="col-md-6">
 							<div class="form-group">
 							<label>PRODUCTO:</label>
-								<select th:field="*{producto.idproducto}" class="form-control">
+								<select th:field="*{producto.idpro}" class="form-control">
 									<option value="-1">Seleccione</option>
 									<option th:each="producto : ${listaProducto}"
-										th:value="${producto.idproducto}"
+										th:value="${producto.idpro}"
 										th:text="${producto.descripcion}" />
 								</select>
-							</div>
-						</div>
-						
-						<div class="col-md-6">
-							<div class="form-group">
-							<label for="inputStock">PRECIO:</label>
-								<input type="text" th:field="*{precio}" class="form-control"
-									placeholder="Precio" maxlength="10"> <i
-									class="form-group__bar"></i>
 							</div>
 						</div>
 						

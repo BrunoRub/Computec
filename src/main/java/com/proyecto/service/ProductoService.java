@@ -10,6 +10,6 @@ public interface ProductoService {
 	Producto registrar(Producto producto);
 	Producto actualizar(Producto producto);	
 	Integer eliminar(Long id);	
-	Optional<Producto> obtenerPorId(Long idproducto);
+	Optional<Producto> obtenerPorId(Long idpro);
 	List<Producto> obtenerProducto();
 }

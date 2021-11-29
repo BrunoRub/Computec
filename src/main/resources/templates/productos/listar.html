@@ -36,7 +36,6 @@
 								<th>Descripcion</th>
 								<th>Precio</th>
 								<th>Stock</th>
-								<th>Fecha de Ingreso</th>
 								<th>Estado</th>
 								<th>Categoria</th>
 							</tr>
@@ -44,19 +43,18 @@
 						<tbody>
 							<th:block th:each="producto : ${listarProductos}">
 								<tr>
-									<td th:text="${producto.idproducto}"></td>
+									<td th:text="${producto.idpro}"></td>
 									<td th:text="${producto.descripcion}"></td>
 									<td th:text="${producto.precio}"></td>
 									<td th:text="${producto.stock}"></td>
-									<td th:text="${producto.fecvencimiento}"></td>
 									<td th:text="${producto.estado}"></td>
 									<td th:text="${producto.categoria.descripcion}"></td>
 									<td><a class="btn btn-primary"
-										th:href="@{/productos/editar/{idproducto}(id=${producto.idproducto})}"> <i
+										th:href="@{/productos/editar/{idpro}(id=${producto.idpro})}"> <i
 											class="zmdi zmdi-edit zmdi-hc-fw"></i>
 
 									</a> <a class="btn btn-danger" href="#"
-										th:onclick="'eliminarProducto(' + ${producto.idproducto} +')'"> <i
+										th:onclick="'eliminarProducto(' + ${producto.idpro} +')'"> <i
 											class="zmdi zmdi-delete zmdi-hc-fw"></i>
 									</a></td>
 								</tr>

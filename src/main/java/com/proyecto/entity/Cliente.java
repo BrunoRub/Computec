@@ -27,8 +27,7 @@ public class Cliente {
 	
 	@Column(name = "apellido", nullable = false, length = 45)
 	private String apellido;
-	
-	
+		
 	@Column(name = "dni", nullable = false, length = 8)
 	private String dni;
 	
@@ -38,15 +37,4 @@ public class Cliente {
 	@Column(name = "telefono", nullable = false, length = 9)
 	private String telefono;
 
-	/*
-	@Override
-	public String toString() {
-		return "Cliente [idcli=" + idcli + ", nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni
-				+ ", direccion=" + direccion + ", telefono=" + telefono + "]";
-	}
-
-	
-	public String getDatos() {
-		return getNombre() + " "+getApellido();
-	}*/
 }	

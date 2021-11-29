@@ -1,7 +1,6 @@
 package com.proyecto.entity;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,8 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -27,7 +24,7 @@ public class Producto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idproducto;
+	private Long idpro;
 
 	@Column(name = "descripcion", nullable = false, length = 50)
 	private String descripcion;
@@ -37,10 +34,6 @@ public class Producto {
 
 	@Column(name = "stock", nullable = false, length = 10)
 	private int stock;
-
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@Column(name = "fecvencimiento")
-	private LocalDate fecvencimiento;
 
 	@Column(columnDefinition = "TINYINT")
 	private int estado;
